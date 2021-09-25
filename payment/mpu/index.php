@@ -888,7 +888,7 @@ if (empty($email)) {
     <fieldset>
         
         <div id="paymentDetailsSection" class="section">
- <input type="text" name="bill_to_forename" value="<?php echo $first_name; ?>"><br>
+ <input type="text" name="bill_to_forename" value="<?php echo $customer_first_name; ?>"><br>
 <input type="text" name="bill_to_surname" value="<?php echo $last_name; ?>"><br>
 <input type="email" name="bill_to_email" value="<?php echo $email; ?>"><br>
  <input type="text" name="bill_to_address_line1" value="<?php echo $address; ?>"><br>

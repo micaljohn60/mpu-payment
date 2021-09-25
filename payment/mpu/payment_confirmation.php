@@ -45,7 +45,7 @@
     <tr>
         <th style="text-align: right;"><span>Your Orderd dfdfdfdf</span></th>
         
-        <th><span>- <?php echo $_POST['item_#_name']; ?></span></th>
+        <th><span>- <?php echo $_POST['order_email'] ?></span></th>
     </tr>
     <tr>
         <td style="text-align: right;"><span>Product Color</span></td>

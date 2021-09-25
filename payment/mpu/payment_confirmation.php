@@ -44,9 +44,11 @@
     <table>
     <tbody>
     <tr>
-        <th style="text-align: right;"><span>Your Orderd Yo2 </span><?php echo $_POST['order_title'] ?></th>
-       
-        <th><span>- <?php echo $_POST['order_email'] ?></span></th>
+        <th style="text-align: right;">
+            <span>Your Order ID <?php echo $_POST['order_title'] ?></span>
+            
+        </th>
+        <th><span>- <?php echo $_POST['bill_to_email'] ?></span></th>
     </tr>
     <tr>
         <td style="text-align: right;"><span>Product Color</span></td>

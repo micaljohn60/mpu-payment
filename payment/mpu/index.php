@@ -876,6 +876,7 @@ if (empty($email)) {
 </Form>
 <div style="display:none;">
 <form id="payment_form" action="payment_confirmation.php" method="post">
+ <input type="hidden" name="user_name" value="<?php echo $first_name; ?>">
     <input type="hidden" name="access_key" value="9d5568c01f83317bb1dc7ae74a3484ac">
     <input type="hidden" name="profile_id" value="037B9FFD-7D2D-4F25-B2C4-3E6C6D2D487E">
     <input type="hidden" name="transaction_uuid" value="<?php echo uniqid() ?>">

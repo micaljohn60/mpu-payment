@@ -55,7 +55,7 @@
      <tr>
         <td style="text-align: right;"><span>Quantity</span></td>
         
-        <td><span>- <?php echo $_POST['item_#_quantity']; ?></span></td>
+        <td><span>- <?php echo $_POST['quantity']; ?></span></td>
     </tr>
     <tr>
         <td style="text-align: right;"><span>Price</span></td>

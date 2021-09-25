@@ -39,8 +39,9 @@
     </header>
     <div style="margin-top: 100px;">
     <center>
-<form id="payment_confirmation" action="https://testsecureacceptance.cybersource.com/pay" method="post"/>
-<table>
+<!-- <form id="payment_confirmation" action="https://testsecureacceptance.cybersource.com/pay" method="post"/> -->
+    <form id="payment_confirmation" action="https://apitest.cybersource.com/pts/v2/payments" method="post"/>
+    <table>
     <tbody>
     <tr>
         <th style="text-align: right;"><span>Your Orderd Yo2 </span><?php echo $_POST['order_title'] ?></th>

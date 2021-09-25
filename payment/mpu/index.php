@@ -8,6 +8,7 @@ $protcolor = $_POST['protcolor'];
 $amount = $_POST['tamount'];
 $address = $_POST["order_address"];
 $quantity = $_POST["quantity"];
+$order_title = $_POST["order_title"];
 
 
 

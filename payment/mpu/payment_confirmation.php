@@ -39,7 +39,7 @@
     </header>
     <div style="margin-top: 100px;">
     <center>
-<form id="payment_confirmation" action="https://apitest.cybersource.com/pts/v2/payments" method="post"/>
+<form id="payment_confirmation" action="https://testsecureacceptance.cybersource.com/pay" method="post"/>
 <table>
     <tbody>
     <tr>

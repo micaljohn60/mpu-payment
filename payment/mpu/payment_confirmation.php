@@ -4,7 +4,7 @@
 
 <html>
 <head>
-    <title>Secure Acceptance - Payment Form</title>
+    <title>Secure Acceptance - Payment Form</title> 
     <link rel="stylesheet" type="text/css" href="payment.css"/>
     <link rel="stylesheet" type="text/css" href="https://m9estore.com/css/main.css">
     <link rel="stylesheet" type="text/css" href="https://m9estore.com/css/search.css">
@@ -43,7 +43,7 @@
 <table>
     <tbody>
     <tr>
-        <th style="text-align: right;"><span>Your Orderd Yo1 </span></th>
+        <th style="text-align: right;"><span>Your Orderd Yo2 </span></th>
         
         <th><span>- <?php echo $_POST['order_email'] ?></span></th>
     </tr>

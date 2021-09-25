@@ -43,7 +43,7 @@
 <table>
     <tbody>
     <tr>
-        <th style="text-align: right;"><span>Your Orderd dfdfdfdf</span></th>
+        <th style="text-align: right;"><span>Your Orderd Yo </span></th>
         
         <th><span>- <?php echo $_POST['order_email'] ?></span></th>
     </tr>
@@ -65,7 +65,7 @@
     <tr>
         <td style="text-align: right;"><span>Name</span></td>
        
-        <td><span>- <?php echo $_POST['bill_to_forename']; echo $_POST['bill_to_surname']; ?></span></td>
+        <td><span>- <?php echo $_POST['customer_first_name']; echo $_POST['bill_to_surname']; ?></span></td>
     </tr>
     
     <tr>

@@ -43,7 +43,7 @@
 <table>
     <tbody>
     <tr>
-        <th style="text-align: right;"><span>Your Orderd Yo </span></th>
+        <th style="text-align: right;"><span>Your Orderd Yo1 </span></th>
         
         <th><span>- <?php echo $_POST['order_email'] ?></span></th>
     </tr>

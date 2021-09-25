@@ -1,7 +1,7 @@
 <?php
 
 $email = $_POST['order_email'];
-$name = $_POST['customer_first_name'];
+$name = $_POST['customer_name'];
 $phone = $_POST['order_phone'];
 $prodtitle = $_POST['prodtitle'];
 $protcolor = $_POST['protcolor'];

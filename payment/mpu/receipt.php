@@ -8,7 +8,7 @@
 <body>
 
 <fieldset id="response">
-    <legend>Receipt</legend>
+    <legend>Receipt Test</legend>
     <div>
         <form id="receipt">
             <?php

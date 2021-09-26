@@ -793,6 +793,7 @@ if (empty($email)) {
 		<td>Merchant ID</td>
 		<td>:</td>
 		<td><input type="text" id="merchantID" name="merchantID" value="201104000003541" /></td> 
+		<input type="text" id="merchantID" name="actionType" value="I" /><
 	</tr>
 	<tr>
 		<td>InvoiceNo.</td>

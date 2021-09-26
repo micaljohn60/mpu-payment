@@ -787,7 +787,7 @@ if (empty($email)) {
 </table>
 
 <div style="display: none;">
-	<Form method="post" action="https://m9payment.neptune.link/payment/mpu/frontend.php"> 
+	<Form method="post" action="https://122.248.120.252:60145/UAT/Payment/Payment/pay"> 
 	<table>
 	<tr>
 		<td>Merchant ID</td>

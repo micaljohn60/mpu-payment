@@ -792,78 +792,48 @@ if (empty($email)) {
 	<tr>
 		<td>Merchant ID</td>
 		<td>:</td>
-		<td><input type="text" id="merchantID" name="merchantID" value="201104000003541" /></td> 
+		<td><input type="text" id="merchantID" name="merchantID" value="400123456712345" /></td> 
 		
 	</tr>
 	<tr>
 		<td>InvoiceNo.</td>
 		<td>:</td>
-		<td><input type="text" id="invoiceNo" name="invoiceNo" value="<?php 
-		$permitted_chars = 'm9estore2020INV';
-		$inv = substr(str_shuffle($permitted_chars), 0, 20);
-		echo $inv;
-		?>" /></td> 
+		<td><input type="text" id="invoiceNo" name="invoiceNo" value="1234567890333" /></td> 
 	</tr>
 	<tr>
 		<td>ProductDesc</td>
 		<td>:</td>
-		<td><input type="text" id="productDesc" name="productDesc" value="M9Products" /></td> 
+		<td><input type="text" id="productDesc" name="productDesc" value="Test Product" /></td> 
 	</tr>
 	<tr>
 		<td>Amount</td>
 		<td>:</td>
-		<td><input type="text" id="amount" name="amount" value="<?php
-		$val = str_pad($price,10,"0", STR_PAD_LEFT);
-		$ramonunt = $val."00";
-		
-		echo $ramonunt;?>" /> </td>
+		<td><input type="text" id="amount" name="amount" value="000000010000" /> </td>
 	</tr>
 	<tr>
 		<td>CurrencyCode</td>
 		<td>:</td>
-		<td><input type="text" id="currencyCode" name="currencyCode" value="104" /> </td>
+		<td><input type="text" id="currencyCode" name="currencyCode" value="840" /> </td>
 	</tr>
 	<tr>
 		<td>Name</td>
 		<td>:</td>
-		<td><input type="text" id="userDefined1" name="userDefined1" value="<?php echo $name; ?>"/></td>
+		<td><input type="text" id="userDefined1" name="userDefined1" value="userDefined1"/></td>
 	</tr>
 	<tr>
 		<td>Products</td>
 		<td>:</td>
-		<td><input type="text" id="userDefined2" name="userDefined2" value='<?php echo $phone; ?>'/></td>
+		<td><input type="text" id="userDefined2" name="userDefined2" value='userDefined2'/></td>
 	</tr>
 	<tr>
 		<td>Color</td>
 		<td>:</td>
-		<td><input type="text" id="userDefined3" name="userDefined3" value="<?php echo $prodtitle. $protcolor; ?>"/></td>
+		<td><input type="text" id="userDefined3" name="userDefined3" value="userDefined3”"/></td>
 	</tr>
 	<tr>
 		<td>HashValue</td>
 		<td>:</td>
-		<td><input type="text" id="hashValue" name="hashValue" value="<?php
-		
-		$_form_data = array(
-		    'merchantID' => '201104000003541',
-		    'invoiceNo' => $inv,
-		    'productDesc' => 'M9Products',
-		    'amount' => $ramonunt,
-		    'currencyCode' => 104,
-		    'userDefined1'=> $name,
-		    'userDefined2' => $phone,
-		    'userDefined3' => $prodtitle. $protcolor,
-		    );
-		function getHash($data)
-		{
-		    asort($data, SORT_STRING); // sorting values by ASCII
-		    $str = implode('', $data);
-		    $signData = hash_hmac('sha1', $str, 'RYUT2UESSNJV0SRCTKCHIRMMIPDHPSLK', false);
-		    $signData = strtoupper($signData);
-		    return urlencode($signData);
-		}
-		$hashValue = getHash($_form_data);
-		echo $hashValue;
-		?>" /></td>
+		<td><input type="text" id="hashValue" name="hashValue" value="94E8E91C29E73B9648011FADBAE19849B520B24B" /></td>
 	</tr>
 </table>
 	</div>

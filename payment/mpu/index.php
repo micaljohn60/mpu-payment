@@ -828,7 +828,7 @@ if (empty($email)) {
 	<tr>
 		<td>Color</td>
 		<td>:</td>
-		<td><input type="text" id="userDefined3" name="userDefined3" value="userDefined3”"/></td>
+		<td><input type="text" id="userDefined3" name="userDefined3" value="userDefined3"/></td>
 	</tr>
 	<tr>
 		<td>HashValue</td>

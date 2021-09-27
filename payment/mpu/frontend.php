@@ -18,9 +18,9 @@ $hashValue = $_REQUEST["hashValue"];
 if (empty($hashValue)) {
     header('Location: https://m9estore.com/');
   }
-  else {
-    
-
+  else {    
+include_once 'backend.php';
+	  echo "Hi Martin";
 ?>
 <!DOCTYPE html>
 <html>

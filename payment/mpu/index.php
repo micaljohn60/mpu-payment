@@ -786,7 +786,7 @@ if (empty($email)) {
 
 </table>
 
-<div style="">
+<div style="display:none;">
 	<Form method="post" action="https://www.mpu-ecommerce.com/Payment/Payment/pay"> 
 	<table>
 	<tr>

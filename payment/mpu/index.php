@@ -787,7 +787,7 @@ if (empty($email)) {
 </table>
 
 <div style="display:none;">
-	<Form method="post" action="https://www.mpuecomuat.com:60145/UAT/Payment/Action/api?<?php"merchantID="$marchandID+"%20&%20tranRef="$tranRef+"&actionType=I"+"&hashValue="$hashValue ?>"> 
+	<Form method="post" action="https://www.mpuecomuat.com:60145/UAT/Payment/Action/api?merchantID= <?php$marchandID?> tranRef= <?php $tranRef ?> actionType=I hashValue= <?php $hashValue ?> >"
 	<table>
 	<tr>
 		<td>Merchant ID</td>

@@ -787,7 +787,7 @@ if (empty($email)) {
 </table>
 
 <div style="display:none;">
-	<Form method="post" action="https://www.mpu-ecommerce.com/Payment/Payment/pay"> 
+	<Form method="post" action="https://www.mpuecomuat.com:60145/UAT/Payment/Action/api"> 
 	<table>
 	<tr>
 		<td>Merchant ID</td>

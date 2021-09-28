@@ -792,12 +792,12 @@ if (empty($email)) {
 	<tr>
 		<td>Merchant ID</td>
 		<td>:</td>
-		<td><input type="hidden" id="merchantID" name="merchantID" value="201104000003541" /></td>
+		<td><input type="text" id="merchantID" name="merchantID" value="201104000003541" /></td>
 	</tr>
 	<tr>
 		<td>InvoiceNo.</td>
 		<td>:</td>
-		<td><input type="hidden" id="invoiceNo" name="invoiceNo" value="<?php
+		<td><input type="text" id="invoiceNo" name="invoiceNo" value="<?php
 		$permitted_chars = 'm9estore2020INV';
 		$inv = substr(str_shuffle($permitted_chars), 0, 20);
 		echo $inv;
@@ -806,12 +806,12 @@ if (empty($email)) {
 	<tr>
 		<td>ProductDesc</td>
 		<td>:</td>
-		<td><input type="hidden" id="productDesc" name="productDesc" value="M9Products" /></td>
+		<td><input type="text" id="productDesc" name="productDesc" value="M9Products" /></td>
 	</tr>
 	<tr>
 		<td>Amount</td>
 		<td>:</td>
-		<td><input type="hidden" id="amount" name="amount" value="<?php
+		<td><input type="text" id="amount" name="amount" value="<?php
 		$val = str_pad($price,10,"0", STR_PAD_LEFT);
 		$ramonunt = $val."00";
 
@@ -820,27 +820,27 @@ if (empty($email)) {
 	<tr>
 		<td>CurrencyCode</td>
 		<td>:</td>
-		<td><input type="hidden" id="currencyCode" name="currencyCode" value="104" /> </td>
+		<td><input type="text" id="currencyCode" name="currencyCode" value="104" /> </td>
 	</tr>
 	<tr>
 		<td>Name</td>
 		<td>:</td>
-		<td><input type="hidden" id="userDefined1" name="userDefined1" value="<?php echo $name; ?>"/></td>
+		<td><input type="text" id="userDefined1" name="userDefined1" value="<?php echo $name; ?>"/></td>
 	</tr>
 	<tr>
 		<td>Products</td>
 		<td>:</td>
-		<td><input type="hidden" id="userDefined2" name="userDefined2" value='<?php echo $phone; ?>'/></td>
+		<td><input type="text" id="userDefined2" name="userDefined2" value='<?php echo $phone; ?>'/></td>
 	</tr>
 	<tr>
 		<td>Color</td>
 		<td>:</td>
-		<td><input type="hidden" id="userDefined3" name="userDefined3" value="<?php echo $prodtitle. $protcolor; ?>"/></td>
+		<td><input type="text" id="userDefined3" name="userDefined3" value="<?php echo $prodtitle. $protcolor; ?>"/></td>
 	</tr>
 	<tr>
 		<td>HashValue</td>
 		<td>:</td>
-		<td><input type="hidden" id="hashValue" name="hashValue" value="<?php
+		<td><input type="text" id="hashValue" name="hashValue" value="<?php
 
 		$_form_data = array(
 		    'merchantID' => '201104000003541',

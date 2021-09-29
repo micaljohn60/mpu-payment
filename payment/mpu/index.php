@@ -33,20 +33,11 @@ $_form_data = array(
     'userDefined2' => $phone,
     'userDefined3' => $prodtitle. $protcolor,
     );
-function getHash($data)
-{
-    asort($data, SORT_STRING); // sorting values by ASCII
-    $str = implode('', $data);
-    $signData = hash_hmac('sha1', $str, 'RYUT2UESSNJV0SRCTKCHIRMMIPDHPSLK', false);
-    $signData = strtoupper($signData);
-    return urlencode($signData);
-}
-$hashValue = getHash($_form_data);
+
 
 echo $hashValue;
-$str = implode('', $_form_data );
-$ss = hash_hmac('sha1', $str, 'RYUT2UESSNJV0SRCTKCHIRMMIPDHPSLK', false);
-echo $ss;
+
+echo $_form_data;
 
 
 

@@ -15,29 +15,7 @@ $order_title = $_POST["order_title"];
 
 
 
-$price = str_replace( ',', '', $amount );
 
-$val = str_pad($price,10,"0", STR_PAD_LEFT);
-$ramonunt = $val."00";
-		
-$permitted_chars = 'm9estore2020INV';
-$inv = substr(str_shuffle($permitted_chars), 0, 19);
-
-$_form_data = array(
-    'merchantID' => '201104000003541',
-    'invoiceNo' => $inv,
-    'productDesc' => 'M9Products',
-    'amount' => $ramonunt,
-    'currencyCode' => 104,
-    'userDefined1'=> $name,
-    'userDefined2' => $phone,
-    'userDefined3' => $prodtitle. $protcolor,
-    );
-
-
-echo $hashValue;
-
-echo $_form_data;
 
 
 
@@ -75,7 +53,34 @@ if (empty($email)) {
 	<title>MPU Payment</title>
 </head>
 <body>
+
     <header>
+	    	<?php
+	  $price = str_replace( ',', '', $amount );
+
+$val = str_pad($price,10,"0", STR_PAD_LEFT);
+$ramonunt = $val."00";
+		
+$permitted_chars = 'm9estore2020INV';
+$inv = substr(str_shuffle($permitted_chars), 0, 19);
+
+$_form_data = array(
+    'merchantID' => '201104000003541',
+    'invoiceNo' => $inv,
+    'productDesc' => 'M9Products',
+    'amount' => $ramonunt,
+    'currencyCode' => 104,
+    'userDefined1'=> $name,
+    'userDefined2' => $phone,
+    'userDefined3' => $prodtitle. $protcolor,
+    );
+
+
+echo $hashValue;
+
+echo $_form_data;
+	  
+	  ?>
     <div class="gnb js-mobile-open">
 		<div class="gnb__dimmed open" style="display: block;"></div>
 		<nav class="gnb__nav" role="navigation">

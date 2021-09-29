@@ -787,7 +787,7 @@ if (empty($email)) {
 </table>
 
 <div style="display:none;">
-	<Form method="post" action="https://www.mpuecomuat.com:60145/UAT/Payment/Action/api">
+	<Form method="post" action="https://www.mpuecomuat.com:60145/UAT/Payment/Payment/pay">
 	
 	
 	      <table>
@@ -822,7 +822,7 @@ if (empty($email)) {
 		      <tr>
 		<td>CurrencyCode</td>
 		<td>:</td>
-		<td><input type="text" id="actionType" name="actionType" value="V" /> </td>
+		
 	</tr>
 	<tr>
 		<td>CurrencyCode</td>

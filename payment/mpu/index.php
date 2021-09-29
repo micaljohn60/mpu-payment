@@ -873,8 +873,7 @@ if (empty($email)) {
 		    return urlencode($signData);
 		}
 		$hashValue = getHash($_form_data);
-		$ss=asort($_form_data, SORT_STRING);
-		echo $ss;
+		
 		echo $hashValue;
 		?>" /></td>
 	</tr>

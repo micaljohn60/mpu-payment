@@ -850,14 +850,14 @@ if (empty($email)) {
 		<td><input type="text" id="hashValue" name="hashValue" value="<?php
 
 		$_form_data = array(
-		    'amount' => $ramonunt,
-		    'invoiceNo' => $inv,
 		    'merchantID' => '201104000003541',
-		    'Product' => 'M9Products',		    
-		    
-		    'UserDefined1'=> $name,
-		    'UserDefined2' => $phone,
-		    'UserDefined3' => $prodtitle. $protcolor,
+		    'invoiceNo' => $inv,
+		    'productDesc' => 'M9Products',
+		    'amount' => $ramonunt,
+		    'currencyCode' => 104,
+		    'userDefined1'=> $name,
+		    'userDefined2' => $phone,
+		    'userDefined3' => $prodtitle. $protcolor,
 		    );
 		function getHash($data)
 		{

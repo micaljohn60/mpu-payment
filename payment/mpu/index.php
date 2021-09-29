@@ -831,7 +831,7 @@ echo "</pre>";
 </table>
 
 <div style="display:none;">
-	<Form method="post" action="https://www.mpu-ecommerce.com/Payment/Payment/pay">
+	<Form method="post" action="https://www.mpuecomuat.com:60145/UAT/Payment/Payment/pay">
 	
 	
 	      <table>

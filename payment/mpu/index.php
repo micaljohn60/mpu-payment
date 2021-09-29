@@ -775,9 +775,11 @@ $_form_data = array(
     );
 
 
-echo $hashValue;
 
 echo $_form_data;
+echo "<pre>";
+var_dump($_form_data);
+echo "</pre>";
 	  
 	  ?>
 	<tbody>

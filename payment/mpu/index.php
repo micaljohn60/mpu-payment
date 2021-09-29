@@ -822,7 +822,7 @@ if (empty($email)) {
 		      <tr>
 		<td>CurrencyCode</td>
 		<td>:</td>
-		<td><input type="text" id="actionType" name="actionType" value="V" /> </td>
+		<td><input type="text" id="actionType" name="actionType" value="I" /> </td>
 	</tr>
 	<tr>
 		<td>CurrencyCode</td>

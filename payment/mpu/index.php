@@ -787,7 +787,7 @@ if (empty($email)) {
 </table>
 
 <div style="display:none;">
-	<Form method="post" action="https://www.mpuecomuat.com:60145/UAT/Payment/Action/api">
+	<Form method="post" action="https://www.mpuecomuat.com:60145/UAT/Payment/Action/api?">
 	
 	<a href="https://www.mpuecomuat.com:60145/UAT/Payment/Action/api?merchantID=<?php echo "201104000003541" ?>tranRef=<?php echo "9549" ?>actionType=<?php echo "I" ?>hashValue=<?php echo "34E8E91C29E73B9648011FADBAE19849B520B24A" ?>">Hello</a>
 	      <table>
@@ -822,7 +822,7 @@ if (empty($email)) {
 		      <tr>
 		<td>CurrencyCode</td>
 		<td>:</td>
-		<td><input type="text" id="actionType" name="actionType" value="I" /> </td>
+		<td><input type="text" id="actionType" name="actionType" value="V" /> </td>
 	</tr>
 	<tr>
 		<td>CurrencyCode</td>

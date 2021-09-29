@@ -853,6 +853,12 @@ if (empty($email)) {
 		<td>HashValue</td>
 		<td>:</td>
 		<td><input type="text" id="hashValue" name="hashValue" value="<?php
+   		$val = str_pad($price,10,"0", STR_PAD_LEFT);
+		$ramonunt = $val."00";
+		
+   		$permitted_chars = 'm9estore2020INV';
+		$inv = substr(str_shuffle($permitted_chars), 0, 19);
+		
 
 		$_form_data = array(
 		    'merchantID' => '201104000003541',

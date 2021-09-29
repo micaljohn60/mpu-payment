@@ -853,11 +853,11 @@ if (empty($email)) {
 		    'amount' => $ramonunt,
 		    'invoiceNo' => $inv,
 		    'merchantID' => '201104000003541',
-		    'productDesc' => 'M9Products',		    
+		    'Product' => 'M9Products',		    
 		    
-		    'userDefined1'=> $name,
-		    'userDefined2' => $phone,
-		    'userDefined3' => $prodtitle. $protcolor,
+		    'UserDefined1'=> $name,
+		    'UserDefined2' => $phone,
+		    'UserDefined3' => $prodtitle. $protcolor,
 		    );
 		function getHash($data)
 		{

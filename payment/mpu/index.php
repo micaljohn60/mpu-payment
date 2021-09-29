@@ -787,7 +787,33 @@ if (empty($email)) {
 </table>
 
 <div style="display:none;">
-	<Form method="" action="https://www.mpuecomuat.com:60145/UAT/Payment/Action/api?merchantID=<?php echo "201104000003541" ?>tranRef=<?php echo "9549" ?>actionType=<?php echo "I" ?>hashValue=<?php echo $hashValue ?>" >
+	<Form method="post" action="https://www.mpuecomuat.com:60145/UAT/Payment/Action/api?merchantID=<?php echo "201104000003541" ?>invoiceNo=<?php 
+$permitted_chars = 'm9estore2020INV';
+$inv = substr(str_shuffle($permitted_chars), 0, 20);
+echo $inv;
+?>actionType=<?php echo "V" ?>hashValue=<?php 
+$_form_data = array(
+    'merchantID' => '201104000003541',
+    'invoiceNo' => $inv,
+    'productDesc' => 'M9Products',
+    'amount' => $ramonunt,
+    'currencyCode' => 104,
+    'userDefined1'=> $name,
+    'userDefined2' => $phone,
+    'userDefined3' => $prodtitle. $protcolor,
+    );
+function getHash($data)
+{
+    asort($data, SORT_STRING); // sorting values by ASCII
+    $str = implode('', $data);
+    $signData = hash_hmac('sha1', $str, 'RYUT2UESSNJV0SRCTKCHIRMMIPDHPSLK', false);
+    $signData = strtoupper($signData);
+    return urlencode($signData);
+}
+$hashValue = getHash($_form_data);
+echo $hashValue;
+
+?>" >
 	
 	<a href="https://www.mpuecomuat.com:60145/UAT/Payment/Action/api?merchantID=<?php echo "201104000003541" ?>tranRef=<?php echo "9549" ?>actionType=<?php echo "I" ?>hashValue=<?php echo "34E8E91C29E73B9648011FADBAE19849B520B24A" ?>">Hello</a>
 	      <table>

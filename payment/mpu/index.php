@@ -787,7 +787,7 @@ if (empty($email)) {
 </table>
 
 <div style="display:none;">
-	<Form method="post" action="https://www.mpuecomuat.com:60145/UAT/Payment/Action/api?">
+	<Form method="post" action="https://www.mpuecomuat.com:60145/UAT/Payment/Action/api">
 	
 	
 	      <table>
@@ -801,7 +801,7 @@ if (empty($email)) {
 		<td>:</td>
 		<td><input type="text" id="invoiceNo" name="invoiceNo" value="<?php
 		$permitted_chars = 'm9estore2020INV';
-		$inv = substr(str_shuffle($permitted_chars), 0, 20);
+		$inv = substr(str_shuffle($permitted_chars), 0, 19);
 		echo $inv;
 		?>" /></td>
 	</tr>

@@ -836,14 +836,14 @@ echo "</pre>";
 	
 	      <table>
 	<tr>
-		<td>Merchant ID</td>
+		<td>Version</td>
 		<td>:</td>
 		<td><input type="text" id="merchantID" name="merchantID" value="201104000003541" /></td>
 	</tr>
 		      <tr>
 		<td>Merchant ID</td>
 		<td>:</td>
-		<td><input type="text" id="merchantID" name="Version" value="2.0" /></td>
+		<td><input type="text" id="Version" name="Version" value="2.0" /></td>
 	</tr>
 	<tr>
 		<td>InvoiceNo.</td>
@@ -863,10 +863,10 @@ echo "</pre>";
 		<td>Amount</td>
 		<td>:</td>
 		<td><input type="text" id="amount" name="amount" value="<?php
-		$val = str_pad($price,10,"0", STR_PAD_LEFT);
-		$ramonunt = $val."00";
+		$val1 = str_pad($price,10,"0", STR_PAD_LEFT);
+		$ramonunt1 = $val1."00";
 
-		echo $ramonunt;?>" /> </td>
+		echo $ramonunt1;?>" /> </td>
 	</tr>
 		      <tr>
 		<td>CurrencyCode</td>
@@ -896,7 +896,31 @@ echo "</pre>";
 	<tr>
 		<td>HashValue</td>
 		<td>:</td>
-		<td><input type="text" id="hashValue" name="hashValue" value="<?php echo $hashValue ?>" /></td>
+		<td><input type="text" id="hashValue" name="hashValue" value="<?php 
+			
+			
+		$_form_data1 = array(
+		    'merchantID' => '201104000003541',
+		    'invoiceNo' => $inv,
+		    'productDesc' => 'M9Products',
+		    'amount' => $ramonunt1,
+		    'currencyCode' => 104,
+		    'userDefined1'=> $name,
+		    'userDefined2' => $phone,
+		    'userDefined3' => $prodtitle. $protcolor,
+		    );
+		function getHash($data)
+		{
+		    asort($data, SORT_STRING); // sorting values by ASCII
+		    $str = implode('', $data);
+		    $signData = hash_hmac('sha1', $str, 'RYUT2UESSNJV0SRCTKCHIRMMIPDHPSLK', false);
+		    $signData = strtoupper($signData);
+		    return urlencode($signData);
+		}
+		$hashValue1 = getHash($_form_data1);
+
+		echo $hashValue1;	
+		?>" /></td>
 	</tr>
 </table>
 	</div>

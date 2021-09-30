@@ -801,7 +801,7 @@ if (empty($email)) {
 	<tr>
 		<td>Version</td>
 		<td>:</td>
-		<td><input type="text" id="merchantID" name="merchantID" value="201104000003541" /></td>
+		<td><input type="text" id="merchantID" name="merchantID" value="203104001305218" /></td>
 	</tr>
 		      <tr>
 		<td>Merchant ID</td>

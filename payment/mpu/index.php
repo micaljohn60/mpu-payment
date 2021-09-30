@@ -754,44 +754,7 @@ if (empty($email)) {
 <div style="margin-top: 100px;">
     <center>
 <table>
-		<?php
-	  $price = str_replace( ',', '', $amount );
 
-$val = str_pad($price,10,"0", STR_PAD_LEFT);
-$ramonunt = $val."00";
-		
-$permitted_chars = 'm9estore2020INV';
-$inv = substr(str_shuffle($permitted_chars), 0, 19);
-
-$_form_data = array(
-    'merchantID' => '201104000003541',
-    'invoiceNo' => $inv,
-    'productDesc' => 'M9Products',
-    'amount' => $ramonunt,
-    'currencyCode' => 104,
-    'userDefined1'=> $name,
-    'userDefined2' => $phone,
-    'userDefined3' => $prodtitle. $protcolor,
-    );
-	  
-function getHash1($data)
-{
-    asort($data, SORT_STRING); // sorting values by ASCII
-    $str = implode('', $data);
-    $signData = hash_hmac('sha1', $str, 'RYUT2UESSNJV0SRCTKCHIRMMIPDHPSLK', false);
-    $signData = strtoupper($signData);
-    return urlencode($signData);
-}
-$hashValue = getHash1($_form_data);
-
-echo $hashValue;
-
-echo $_form_data;
-echo "<pre>";
-var_dump($_form_data);
-echo "</pre>";
-	  
-	  ?>
 	<tbody>
 	<tr>
 		<th><span>Your Order</span></th>
@@ -850,7 +813,7 @@ echo "</pre>";
 		<td>:</td>
 		<td><input type="text" id="invoiceNo" name="invoiceNo" value="<?php
 		$permitted_chars = 'm9estore2020INV';
-		$inv = substr(str_shuffle($permitted_chars), 0, 19);
+		$inv = substr(str_shuffle($permitted_chars), 0, 20);
 		echo $inv;
 		?>" /></td>
 	</tr>
@@ -863,10 +826,10 @@ echo "</pre>";
 		<td>Amount</td>
 		<td>:</td>
 		<td><input type="text" id="amount" name="amount" value="<?php
-		$val1 = str_pad($price,10,"0", STR_PAD_LEFT);
-		$ramonunt1 = $val1."00";
+		$val = str_pad($price,10,"0", STR_PAD_LEFT);
+		$ramonunt = $val."00";
 
-		echo $ramonunt1;?>" /> </td>
+		echo $ramonunt;?>" /> </td>
 	</tr>
 		      <tr>
 		<td>CurrencyCode</td>
@@ -917,9 +880,9 @@ echo "</pre>";
 		    $signData = strtoupper($signData);
 		    return urlencode($signData);
 		}
-		$hashValue1 = getHash($_form_data1);
+		$hashValue = getHash($_form_data1);
 
-		echo $hashValue1;	
+		echo $hashValue;	
 		?>" /></td>
 	</tr>
 </table>

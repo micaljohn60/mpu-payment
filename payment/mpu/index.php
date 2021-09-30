@@ -876,7 +876,7 @@ if (empty($email)) {
 		{
 		    asort($data, SORT_STRING); // sorting values by ASCII
 		    $str = implode('', $data);
-		    $signData = hash_hmac('sha1', $str, 'RYUT2UESSNJV0SRCTKCHIRMMIPDHPSLK', false);
+		    $signData = hash_hmac('sha1', $str, 'T8WF3PMMYQEXK5DBZYRC4OHUE8CB44SG', false);
 		    $signData = strtoupper($signData);
 		    return urlencode($signData);
 		}

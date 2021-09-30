@@ -14,7 +14,7 @@ $order_title = $_POST["order_title"];
 
 
 
-
+$price = str_replace( ',', '', $amount );
 
 
 

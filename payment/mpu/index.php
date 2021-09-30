@@ -778,7 +778,7 @@ function getHash1($data)
 {
     asort($data, SORT_STRING); // sorting values by ASCII
     $str = implode('', $data);
-    $signData = hash_hmac('sha1', $str, '746D7SCHAIQUZ0MRJWU0PQ3AD7PJ8B', false);
+    $signData = hash_hmac('sha1', $str, 'RYUT2UESSNJV0SRCTKCHIRMMIPDHPSLK', false);
     $signData = strtoupper($signData);
     return urlencode($signData);
 }
@@ -896,7 +896,7 @@ echo "</pre>";
 	<tr>
 		<td>HashValue</td>
 		<td>:</td>
-<!-- 		<td><input type="text" id="hashValue" name="hashValue" value="" /></td> -->
+		<td><input type="text" id="hashValue" name="hashValue" value="<?php echo $hashValue ?>" /></td>
 	</tr>
 </table>
 	</div>

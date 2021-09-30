@@ -854,7 +854,7 @@ if (empty($email)) {
 	<tr>
 		<td>Color</td>
 		<td>:</td>
-		<td><input type="text" id="userDefined3" name="userDefined3" value="<?php echo $prodtitle. $protcolor; ?>"/></td>
+		<td><input type="text" id="userDefined3" name="userDefined3" value="<?php echo $prodtitle; ?>"/></td>
 	</tr>
 	<tr>
 		<td>HashValue</td>
@@ -866,7 +866,7 @@ if (empty($email)) {
 		    'merchantID' => '201104000003541',
 		    'invoiceNo' => $inv,
 		    'productDesc' => 'M9Products',
-		    'amount' => $ramonunt1,
+		    'amount' => $ramonunt,
 		    'currencyCode' => 104,
 		    'userDefined1'=> $name,
 		    'userDefined2' => $phone,

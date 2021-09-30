@@ -896,11 +896,7 @@ echo "</pre>";
 	<tr>
 		<td>HashValue</td>
 		<td>:</td>
-		<td><input type="text" id="hashValue" name="hashValue" value="<?php
-  
-		
-		echo $hashValue;
-		?>" /></td>
+<!-- 		<td><input type="text" id="hashValue" name="hashValue" value="" /></td> -->
 	</tr>
 </table>
 	</div>

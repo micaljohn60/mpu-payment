@@ -778,7 +778,7 @@ function getHash1($data)
 {
     asort($data, SORT_STRING); // sorting values by ASCII
     $str = implode('', $data);
-    $signData = hash_hmac('sha1', $str, 'RYUT2UESSNJV0SRCTKCHIRMMIPDHPSLK', false);
+    $signData = hash_hmac('sha1', $str, '746D7SCHAIQUZ0MRJWU0PQ3AD7PJ8B', false);
     $signData = strtoupper($signData);
     return urlencode($signData);
 }

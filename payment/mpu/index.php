@@ -870,7 +870,7 @@ if (empty($email)) {
 		    'currencyCode' => 104,
 		    'userDefined1'=> $name,
 		    'userDefined2' => $phone,
-		    'userDefined3' => $prodtitle. $protcolor,
+		    'userDefined3' => $prodtitle,
 		    );
 		function getHash($data)
 		{

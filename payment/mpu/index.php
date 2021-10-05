@@ -908,7 +908,7 @@ if (empty($email)) {
     <input type="hidden" name="profile_id" value="FD26AD45-FADF-4239-9D62-9E99D4B4F412">
     <input type="hidden" name="transaction_uuid" value="<?php echo uniqid() ?>">
     <input type="hidden" name="signed_field_names" value="access_key,profile_id,transaction_uuid,signed_field_names,unsigned_field_names,signed_date_time,locale,transaction_type,reference_number,amount,currency">
-<input type="hidden" name="unsigned_field_names">
+<input type="hidden" name="unsigned_field_names" value="access_key,profile_id,transaction_uuid,signed_field_names,unsigned_field_names,signed_date_time,locale,transaction_type,reference_number,amount,currency">
 
          
     <input type="hidden" name="signed_date_time" value="<?php echo gmdate("Y-m-d\TH:i:s\Z"); ?>">

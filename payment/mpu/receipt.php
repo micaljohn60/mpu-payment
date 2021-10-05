@@ -9,6 +9,9 @@
 
 <fieldset id="response">
     <legend>Receipt Test</legend>
+    <h1> <?php $_REQUEST["message"]?> </h1>
+    <h1> Message will be there ^^ </h1>
+    
     <div>
         <form id="receipt">
             <?php

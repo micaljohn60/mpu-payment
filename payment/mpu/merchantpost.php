@@ -10,7 +10,7 @@ echo $decision;
        
         $insert = $db->query("INSERT test_table (invalid_field) VALUES ('".$invalid_fields."')");
 
-      $insert2 = $db->query("UPDATE order_shippings SET status='$status' WHERE shipping_phone='$userDefined2' ");
+      
  ?>
 
 

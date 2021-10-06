@@ -17,7 +17,7 @@ $auth_amount = $_REQUEST["auth_amount"];
 $req_amount = $_REQUEST["req_amount"];
 $decision = $_REQUEST["decision"];
 
-$sql = "INSERT INTO payment_visa(req_card_number,card_type_name,reason_code,auth_amount,req_amount,decision) VALUE (:req_card_number,:card_type_name,:reason_code,:auth_amount,:req_amount,:decision)"
+$sql = "INSERT INTO payment_visa(req_card_number,card_type_name,reason_code,auth_amount,req_amount,decision) VALUE (:req_card_number,:card_type_name,:reason_code,:auth_amount,:req_amount,:decision)";
 $insert_query = $connection->prepare($sql);
 $insert_query->bindParam(':req_card_number',$req_card_number,PDO::PARAM_STR);
 $insert_query->bindParam(':card_type_name',$card_type_name,PDO::PARAM_STR);

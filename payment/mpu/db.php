@@ -1,6 +1,6 @@
 <?php
 //DB details
-$dbHost = 'localhost';
+$dbHost = '127.0.0.1';
 $dbUsername = 'root';
 $dbPassword = '';
 $dbName = 'my_test';

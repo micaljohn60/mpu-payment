@@ -912,7 +912,7 @@ if (empty($email)) {
 <input type="hidden" name="unsigned_field_names" value>
 
     <input type="hidden" name="bill_to_address_state" value="MM">
-    <input type="hidden" name="bill_to_address_postal_code" value="6953">
+    <input type="hidden" name="bill_to_address_postal_code" value="11401">
     <input type="hidden" name="bill_to_address_country" value="Myanmar">
     <input type="hidden" name="bill_to_address_city" value="Yangon">
     <input type="hidden" name="signed_date_time" value="<?php echo gmdate("Y-m-d\TH:i:s\Z"); ?>">

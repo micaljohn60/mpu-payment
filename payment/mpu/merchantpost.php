@@ -1,14 +1,31 @@
-<?php
+<?php 
  include 'security.php';
-   echo "Hello Worls --> fields -->";
-   $invalid_field = $_REQUEST["invalid_fields"];
+ define('DB_HOST','localhost');
+ define('DB_USER','neptrior_mnine');
+ define('DB_PASS','Pas$m9db');
+ define('DB_NAME','neptrior_mninedb');
+ 
+try{
+    $connection = new PDO("mysql:host=".DB_HOST.";dbname=".DB_NAME,DB_USER,DB_PASS);
+}catch(PDOException $e){
+    exit("Error: " .$e->getMessage());
+} 
+$req_card_number = $_REQUEST["req_card_number"];
+$card_type_name = $_REQUEST["card_type_name"];
+$reason_code = $_REQUEST["reason_code"];
+$auth_amount = $_REQUEST["auth_amount"];
+$req_amount = $_REQUEST["req_amount"];
 $decision = $_REQUEST["decision"];
 
-echo $invalid_fields;
-echo $decision;
-
-
-      
- ?>
+$sql = "INSERT INTO payment_visa(req_card_number,card_type_name,reason_code,auth_amount,req_amount,decision) VALUE (:req_card_number,:card_type_name,:reason_code,:auth_amount,:req_amount,:decision)"
+$insert_query = $connection->prepare($sql);
+$insert_query->bindParam(':req_card_number',$req_card_number,PDO::PARAM_STR);
+$insert_query->bindParam(':card_type_name',$card_type_name,PDO::PARAM_STR);
+$insert_query->bindParam(':reason_code',$reason_code,PDO::PARAM_STR);
+$insert_query->bindParam(':auth_amount',$auth_amount,PDO::PARAM_STR);
+$insert_query->bindParam(':req_amount',$req_amount,PDO::PARAM_STR);
+$insert_query->bindParam(':decision',$decision,PDO::PARAM_STR);
+$insert_query->execute();
+?>
 
 

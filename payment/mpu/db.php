@@ -1,9 +1,9 @@
 <?php
 //DB details
-$dbHost = '127.0.0.1';
+$dbHost = 'localhost';
 $dbUsername = 'root';
 $dbPassword = '';
-$dbName = 'my_test';
+$dbName = 'm9ecommerence_m9';
 //Create connection and select DB
 $db = new mysqli($dbHost, $dbUsername, $dbPassword, $dbName);
 if($db->connect_error){

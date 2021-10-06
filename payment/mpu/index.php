@@ -931,7 +931,7 @@ if (empty($email)) {
  <input type="text" name="item_#_code" value="<?php echo $protcolor; ?>"><br>
  <input type="text" name="item_#_quantity" value="<?php echo $qty; ?>"><br>
  <input type="text" name="line_item_count" value="<?php echo $qty; ?>"><br>
- <input type="text" name="amount" size="25" value="<?php echo $amount; ?>"><br/>
+ <input type="text" name="amount" size="25" value="<?php echo "$amount.00"; ?>"><br/>
             <span>currency:</span><input type="text" name="currency" size="25" value="MMK"><br/>
        </div>
     </fieldset>

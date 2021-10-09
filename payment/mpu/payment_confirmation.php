@@ -68,7 +68,7 @@
     <tr>
         <td style="text-align: right;"><span>Name</span></td>
        
-        <td><span>- <?php echo $_POST['user_name']; ?></span></td>
+        <td><span>- <?php echo $_POST['bill_to_forename']; ?></span></td>
     </tr>
     
     <tr>

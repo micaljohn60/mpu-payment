@@ -946,7 +946,7 @@ if (empty($email)) {
     color: #fff !important;
     padding: 10px 24px 11px 24px;
     border-radius: 20px;
-   
+    display: none;
 "/>
 </div>
 </form>

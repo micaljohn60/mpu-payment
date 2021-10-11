@@ -26,7 +26,8 @@
 	
 	console.log("Hello World Above Function");
 	
-function onClickPayment(){
+function onClickPayment(e){
+	e.preventDefault()
 	console.log("Hello World in Function");
 	
 // 	 document.getElementById("payment_confirmation").submit();

@@ -20,8 +20,8 @@ try{
 
 $sql = "INSERT INTO payment_visa(reference_number,username,quantity) VALUE (:reference_number,:username,:quantity)";
 $insert_query = $connection->prepare($sql);
-$insert_query->bindParam(':reference_number',$name,PDO::PARAM_STR);
-$insert_query->bindParam(':username',$reference,PDO::PARAM_STR);
+$insert_query->bindParam(':reference_number',$reference,PDO::PARAM_STR);
+$insert_query->bindParam(':username',$name,PDO::PARAM_STR);
 $insert_query->bindParam(':quantity',$quantity,PDO::PARAM_STR);
 $insert_query->execute();
 
@@ -40,32 +40,12 @@ $insert_query->execute();
     <link rel="stylesheet" type="text/css" href="https://m9estore.com/css/chatmsg.css">
     <link rel="stylesheet" type="text/css" href="https://m9estore.com/css/floatnavi.css">
     <link rel="stylesheet" type="text/css" href="https://m9estore.com/css/whatnews.css">
-	<script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.6.0/jquery.min.js" integrity="sha512-894YE6QWD5I59HgZOGReFYm4dnWc1Qt5NtvYSaNcOP+u1T9qYdvdihz0PPSiiqn/+/3e7Jo4EaG7TubfWGUrMQ==" crossorigin="anonymous" referrerpolicy="no-referrer"></script>
     <style>td span{font-size:20px;margin-right: 25px;width:auto !important;}
             th span{font-size:30px;margin-right: 25px;width:auto !important;}
             tr {height:50px;}
             header {background: #1a1f71;height: 100px!important;}
       </style> 
-	<script>
-	console.log("Hello WOld");
 	
-	console.log("Hello World Above Function");
-	
-function onClickPayment(){
-	
-	console.log("Hello World in Function");
-	
-// 	 document.getElementById("payment_confirmation").submit();
-//     	document.getElementById("visa_payment").submit();
-	console.log("Hello World");
-	
-	 
-	setTimeout(function(){ document.getElementById("visa_payment").submit();}, 300); 
-	 setTimeout(function(){ document.getElementById("payment_confirmation").submit();}, 600);  
-	
-}
-   
-</script>
       
 </head>
 <body>
@@ -174,7 +154,7 @@ function onClickPayment(){
     margin-bottom:100px;
 "><a href="https://m9estore.com/" style="color: #fff !important;">Cancel</a></button>
 </div>
-	    <input type="button" id="btnsubmit" value="Process to Checkout" style="
+	    <input type="submit" id="btnsubmit" value="Process to Checkout" style="
     background-color: #000 !important;
     color: #fff !important;
     padding: 10px 24px 11px 24px;

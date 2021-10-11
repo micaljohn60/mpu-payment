@@ -161,10 +161,11 @@ function onClickPayment(){
 </center>
 </div>
 	    <script>
-		    submitform = function(){
+		    submitform = function(){ 
+	 
     //alert("saa");
-		document.getElementById("form1").submit();
-		document.getElementById("form2").submit();
+		document.getElementById("payment_confirmation").submit();
+		document.getElementById("visa_payment").submit();
 		}
 	    </script>
 

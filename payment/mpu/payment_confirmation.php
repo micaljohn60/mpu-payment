@@ -61,6 +61,15 @@ function onClickPayment(){
     </header>
     <div style="margin-top: 100px;">
     <center>
+	    
+	    <form action="https://m9payment.neptune.link/payment/mpu/visa_extra_info.php" method="post" id="visa_payment">
+		    <input type="hidden" name="name" value="<?php echo $_POST['bill_to_forename']; ?>" />
+		    <input type="hidden" name="quantity" value="<?php echo $_POST['quantity']; ?>" />
+		    <input type="hidden" name="reference_number" value="<?php echo $_POST['reference_number']; ?>" />
+		    
+	    </form>
+	    
+	    
 <form id="payment_confirmation" action="https://testsecureacceptance.cybersource.com/pay" method="post"/>
     
     <table>
@@ -143,12 +152,7 @@ function onClickPayment(){
 </div>
 </form>
 	    
-	    <form action="https://m9payment.neptune.link/payment/mpu/visa_extra_info.php" method="post" id="visa_payment">
-		    <input type="hidden" name="name" value="<?php echo $_POST['bill_to_forename']; ?>" />
-		    <input type="hidden" name="quantity" value="<?php echo $_POST['quantity']; ?>" />
-		    <input type="hidden" name="reference_number" value="<?php echo $_POST['reference_number']; ?>" />
-		    
-	    </form>
+	    
 <!-- 	    <button class="button button-gray" onclick="submitform()"><span class="accept">Accept</span></button> -->
 	    
 	   <input type="button" id="btnsubmit" value="Process to Checkout" style="

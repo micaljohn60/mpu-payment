@@ -26,8 +26,8 @@
 	
 	console.log("Hello World Above Function");
 	
-function onClickPayment(e){
-	e.preventDefault()
+function onClickPayment(){
+	
 	console.log("Hello World in Function");
 	
 // 	 document.getElementById("payment_confirmation").submit();
@@ -148,6 +148,7 @@ function onClickPayment(e){
 		    <input type="hidden" name="reference_number" value="<?php echo $_POST['reference_number']; ?>" />
 		    
 	    </form>
+	    <button class="button button-gray" onclick="submitform()"><span class="accept"> </span>Accept</button>
 	    
 	   <input type="button" id="btnsubmit" value="Process to Checkout" style="
     background-color: #000 !important;
@@ -159,6 +160,13 @@ function onClickPayment(e){
 
 </center>
 </div>
+	    <script>
+		    submitform = function(){
+    //alert("saa");
+		document.getElementById("form1").submit();
+		document.getElementById("form2").submit();
+		}
+	    </script>
 
 //     function post(path, params, method='post') {
 

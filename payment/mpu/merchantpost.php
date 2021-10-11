@@ -10,6 +10,14 @@ try{
 }catch(PDOException $e){
     exit("Error: " .$e->getMessage());
 } 
+$fetch_sql = "SELECT reference_number FROM payment_visa";
+$fetch_query = $connection->prepare($fetch_sql);
+$fetch_query->execute();
+$result = $fetch_query->fetch(PDO::FETCH_ASSOC);
+$ans = $result['reference_number'];
+
+echo $ans;
+
 $req_reference_number = $_REQUEST["req_reference_number"];
 $req_transaction_id = $_REQUEST["transaction_id"];
 $req_card_number = $_REQUEST["req_card_number"];
@@ -20,6 +28,8 @@ $req_amount = $_REQUEST["req_amount"];
 $decision = $_REQUEST["req_reference_number"];
 $name = "yelinnaung@dev";
 $quantity = 20;
+
+
 
 $sql_insert_response = "INSERT INTO payment_visa(reference_number,username,quantity,transaction_id,req_card_number,card_type_name,reason_code,auth_amount,req_amount,decision) VALUE (:referencenub,:username,:quantity,:transaction_id,:req_card_number,:card_type_name,:reason_code,:auth_amount,:req_amount,:decision)";
 $insert_response_query = $connection->prepare($sql_insert_response);

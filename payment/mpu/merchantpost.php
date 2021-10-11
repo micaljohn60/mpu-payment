@@ -18,6 +18,7 @@ foreach($result as $row){
    $ans = $result['reference_number'];
    echo $ans;
 }
+echo "Hello";
 $req_reference_number = $_REQUEST["req_reference_number"];
 $req_transaction_id = $_REQUEST["transaction_id"];
 $req_card_number = $_REQUEST["req_card_number"];

@@ -41,6 +41,7 @@ foreach($result as $row){
 }
 echo $reference_number;
 echo $id;
+echo "Hello";
 if($ans == $req_reference_number){
 $sql = "UPDATE payment_visa SET (
 transaction_id = :transaction_id,

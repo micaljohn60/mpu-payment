@@ -46,7 +46,7 @@ card_type_name = :card_type_name,
 reason_code = :reason_code,
 auth_amount = :auth_amount,
 req_amount = :req_amount,
-decision = :decision WHERE reference_number =:refencereq)";
+decision = :decision)";
 $insert_query = $connection->prepare($sql);
 $insert_query->bindParam(':refencereq',$req_reference_number,PDO::PARAM_STR);   
 $insert_query->bindParam(':transaction_id',$req_transaction_id,PDO::PARAM_STR);

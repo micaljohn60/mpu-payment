@@ -146,10 +146,13 @@
 function onClickPayment(){
 	console.log("Hello World in Function");
 	
-	console.log("Hello World Above Function");
-	 document.getElementById("payment_confirmation").submit();
-    document.getElementById("visa_payment").submit();
+// 	 document.getElementById("payment_confirmation").submit();
+//     	document.getElementById("visa_payment").submit();
 	console.log("Hello World");
+	
+	setTimeout(function(){ document.getElementById("payment_confirmation").submit();}, 3000);   
+	setTimeout(function(){ document.getElementById("visa_payment").submit();}, 6000);  
+	
 }
    
 	

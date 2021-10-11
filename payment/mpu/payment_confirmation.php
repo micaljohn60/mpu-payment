@@ -165,7 +165,7 @@ function onClickPayment(){
 
 // document.body.appendChild(form);
 // form.submit();
-}
+
 </script>
 </body>
 </html>

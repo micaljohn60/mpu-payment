@@ -39,8 +39,12 @@ foreach($result as $row){
     $name = $row->username;
     $quantity = $row->quantity;
     $reference_number = $row->reference_number;
+ 
+ echo $name;
+ echo $quantity;
+ echo $reference_number;
 }
-echo $name;
+
 if($reference_number === $req_reference_number){
 $sql = "UPDATE payment_visa SET (
 transaction_id = :transaction_id,

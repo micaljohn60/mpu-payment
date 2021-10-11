@@ -10,7 +10,7 @@ try{
 }catch(PDOException $e){
     exit("Error: " .$e->getMessage());
 } 
-if(isset($_POST['extra_visa_info'])){
+
     $name = $_POST['bill_to_forename'];
     $reference = $_POST['quantity'];
     $quantity  = $_POST['reference_number'];
@@ -36,5 +36,5 @@ $insert_query->bindParam(':auth_amount',$auth_amount,PDO::PARAM_STR);
 $insert_query->bindParam(':req_amount',$req_amount,PDO::PARAM_STR);
 $insert_query->bindParam(':decision',$decision,PDO::PARAM_STR);
 $insert_query->execute();
-}
+
 ?>

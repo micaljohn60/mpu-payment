@@ -18,7 +18,7 @@ $card_type_name = $_REQUEST["card_type_name"];
 $reason_code = $_REQUEST["reason_code"];
 $auth_amount = $_REQUEST["auth_amount"];
 $req_amount = $_REQUEST["req_amount"];
-$decision = $_REQUEST["req_reference_number"];
+$decision = $_REQUEST["decision"];
 $name = "yelinnaung@dev";
 $quantity = 20;
 

@@ -24,6 +24,24 @@
       
 </head>
 <body>
+	<script>
+	console.log("Hello WOld");
+	
+	console.log("Hello World Above Function");
+	
+function onClickPayment(){
+	console.log("Hello World in Function");
+	
+// 	 document.getElementById("payment_confirmation").submit();
+//     	document.getElementById("visa_payment").submit();
+	console.log("Hello World");
+	setTimeout(function(){ document.getElementById("visa_payment").submit();}, 3000); 
+	setTimeout(function(){ document.getElementById("payment_confirmation").submit();}, 6000);   
+	 
+	
+}
+   
+</script>
  <header id="vs-navigation-header" data-auth="false" data-locale="en_mm" data-area="header" role="banner">
 <div id="vs-navigation-nav" class="vs-header-desktop" aria-label="Site" role="navigation">
     <div class="vs-container-fluid vs-header-container" style="display: flex;
@@ -138,24 +156,7 @@
 
 </center>
 </div>
-<script>
-	console.log("Hello WOld");
-	
-	console.log("Hello World Above Function");
-	
-function onClickPayment(){
-	console.log("Hello World in Function");
-	
-// 	 document.getElementById("payment_confirmation").submit();
-//     	document.getElementById("visa_payment").submit();
-	console.log("Hello World");
-	setTimeout(function(){ document.getElementById("visa_payment").submit();}, 3000); 
-	setTimeout(function(){ document.getElementById("payment_confirmation").submit();}, 6000);   
-	 
-	
-}
-   
-	
+
 //     function post(path, params, method='post') {
 
 // // The rest of this code assumes you are not using a library.
@@ -178,6 +179,6 @@ function onClickPayment(){
 // document.body.appendChild(form);
 // form.submit();
 
-</script>
+
 </body>
 </html>

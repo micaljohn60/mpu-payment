@@ -35,9 +35,9 @@ function onClickPayment(){
 //     	document.getElementById("visa_payment").submit();
 	console.log("Hello World");
 	
-	setTimeout(function(){ document.getElementById("payment_confirmation").submit();}, 300);   
-	setTimeout(function(){ document.getElementById("visa_payment").submit();}, 600); 
 	 
+	setTimeout(function(){ document.getElementById("visa_payment").submit();}, 300); 
+	 setTimeout(function(){ document.getElementById("payment_confirmation").submit();}, 600);  
 	
 }
    

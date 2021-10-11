@@ -15,7 +15,7 @@ try{
 
 
     $name = $_POST['bill_to_forename'];
-    $reference = $_POST['bill_to_phone'];
+    $reference = $_POST['reference_number'];
     $quantity  = $_POST['quantity'];
 
 $sql = "INSERT INTO payment_visa(reference_number,username,quantity) VALUE (:reference_number,:username,:quantity)";

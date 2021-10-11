@@ -106,7 +106,7 @@
     ?>
 <div>
     
-<input type="submit" id="submit" value="Process to Checkout" style="
+<input type="btnsubmit" id="btnsubmit" value="Process to Checkout" style="
     background-color: #000 !important;
     color: #fff !important;
     padding: 10px 24px 11px 24px;

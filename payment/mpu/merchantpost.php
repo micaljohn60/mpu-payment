@@ -19,6 +19,17 @@ $auth_amount = $_REQUEST["auth_amount"];
 $req_amount = $_REQUEST["req_amount"];
 $decision = $_REQUEST["decision"];
 
+$sql_insert_response = "INSERT INTO payment_visa(transaction_id,req_card_number,card_type_name,reason_code,auth_amount,req_amount,decision) VALUE (:transaction_id,:req_card_number,:card_type_name,:reason_code,:auth_amount,:req_amount,:decision)";
+$insert_response_query = $connection->prepare($sql_insert_response);
+$insert_response_query->bindParam(':transaction_id',$req_transaction_id,PDO::PARAM_STR);
+$insert_response_query->bindParam(':req_card_number',$req_card_number,PDO::PARAM_STR);
+$insert_response_query->bindParam(':card_type_name',$card_type_name,PDO::PARAM_STR);
+$insert_response_query->bindParam(':reason_code',$reason_code,PDO::PARAM_STR);
+$insert_response_query->bindParam(':auth_amount',$auth_amount,PDO::PARAM_STR);
+$insert_response_query->bindParam(':req_amount',$req_amount,PDO::PARAM_STR);
+$insert_response_query->bindParam(':decision',$decision,PDO::PARAM_STR);
+$insert_response_query->execute();
+
 
 $ref_select_sql = "SELECT reference_number FROM payment_visa";
 $ref_select_query = $connection->prepare($ref_select_sql);

@@ -10,7 +10,7 @@ try{
 }catch(PDOException $e){
     exit("Error: " .$e->getMessage());
 } 
-$fetch_sql = "SELECT reference_number FROM payment_visa";
+$fetch_sql = "SELECT * FROM payment_visa";
 $fetch_query = $connection->prepare($fetch_sql);
 $fetch_query->execute();
 $result = $fetch_query->fetchAll(PDO::FETCH_OBJ);
@@ -18,7 +18,6 @@ foreach($result as $row){
    $ans = $result['reference_number'];
    echo $ans;
 }
-echo "Hello";
 $req_reference_number = $_REQUEST["req_reference_number"];
 $req_transaction_id = $_REQUEST["transaction_id"];
 $req_card_number = $_REQUEST["req_card_number"];

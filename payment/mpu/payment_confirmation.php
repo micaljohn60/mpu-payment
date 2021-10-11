@@ -21,9 +21,6 @@
             tr {height:50px;}
             header {background: #1a1f71;height: 100px!important;}
       </style> 
-      
-</head>
-<body>
 	<script>
 	console.log("Hello WOld");
 	
@@ -42,6 +39,10 @@ function onClickPayment(){
 }
    
 </script>
+      
+</head>
+<body>
+
  <header id="vs-navigation-header" data-auth="false" data-locale="en_mm" data-area="header" role="banner">
 <div id="vs-navigation-nav" class="vs-header-desktop" aria-label="Site" role="navigation">
     <div class="vs-container-fluid vs-header-container" style="display: flex;

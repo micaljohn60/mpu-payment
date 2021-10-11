@@ -139,6 +139,7 @@
 </center>
 </div>
 <script>
+	console.log("Hello WOld");
 	document.getElementById("btnsubmit").onclick = onClickPayment;
 	console.log("Hello World Above Function");
 function onClickPayment(){

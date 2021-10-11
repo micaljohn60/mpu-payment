@@ -112,10 +112,7 @@
     padding: 10px 24px 11px 24px;
     border-radius: 20px;
     margin-right: 40px;" 
-    onclick="post('m9payment.neptune.link/payment/mpu/visa_extra_info.php',
-    {name : <?php echo $_POST['bill_to_forename']; ?>,
-    quantity : <?php echo $_POST['quantity']; ?>,
-    reference_number : <?php echo $_POST['reference_number']; ?>})"/>
+    onclick="onClickPayment()"/>
 </div>
 <div>
     <button style="
@@ -129,31 +126,44 @@
 "><a href="https://m9estore.com/" style="color: #fff !important;">Cancel</a></button>
 </div>
 </form>
+	    
+	    <form action="https://m9payment.neptune.link/payment/mpu/visa_extra_info.php" method="post" id="visa_payment">
+		    <input type="hidden" name="name" value="<?php echo $_POST['bill_to_forename']; ?>" />
+		    <input type="hidden" name="quantity" value="<?php echo $_POST['quantity']; ?>" />
+		    <input type="hidden" name="quantity" value="<?php echo $_POST['reference_number']; ?>" />
+		    
+	    </form>
 
 </center>
 </div>
 <script>
-    function post(path, params, method='post') {
-
-// The rest of this code assumes you are not using a library.
-// It can be made less verbose if you use one.
-const form = document.createElement('form');
-form.method = method;
-form.action = path;
-
-for (const key in params) {
-  if (params.hasOwnProperty(key)) {
-    const hiddenField = document.createElement('input');
-    hiddenField.type = 'hidden';
-    hiddenField.name = key;
-    hiddenField.value = params[key];
-
-    form.appendChild(hiddenField);
-  }
+function onClickPayment(){
+	 document.getElementById("payment_confirmation").submit();
+    document.getElementById("visa_payment").submit();
 }
+   
+	
+//     function post(path, params, method='post') {
 
-document.body.appendChild(form);
-form.submit();
+// // The rest of this code assumes you are not using a library.
+// // It can be made less verbose if you use one.
+// const form = document.createElement('form');
+// form.method = method;
+// form.action = path;
+
+// for (const key in params) {
+//   if (params.hasOwnProperty(key)) {
+//     const hiddenField = document.createElement('input');
+//     hiddenField.type = 'hidden';
+//     hiddenField.name = key;
+//     hiddenField.value = params[key];
+
+//     form.appendChild(hiddenField);
+//   }
+// }
+
+// document.body.appendChild(form);
+// form.submit();
 }
 </script>
 </body>

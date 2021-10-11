@@ -128,22 +128,25 @@
 		    
 	    </form>
 	    
-	   <button type="btnsubmit" id="btnsubmit" value="Process to Checkout" style="
+	   <input type="button" id="btnsubmit" value="Process to Checkout" style="
     background-color: #000 !important;
     color: #fff !important;
     padding: 10px 24px 11px 24px;
     border-radius: 20px;
     margin-right: 40px;" 
-	onclick="onClickPayment()"> Submit </button>
+	onclick="onClickPayment()" value="submit"/>
 
 </center>
 </div>
 <script>
 	console.log("Hello WOld");
-	document.getElementById("btnsubmit").onclick = onClickPayment;
-	console.log("Hello World Above Function");
-function onClickPayment(){
 	
+	console.log("Hello World Above Function");
+	
+function onClickPayment(){
+	console.log("Hello World in Function");
+	
+	console.log("Hello World Above Function");
 	 document.getElementById("payment_confirmation").submit();
     document.getElementById("visa_payment").submit();
 	console.log("Hello World");

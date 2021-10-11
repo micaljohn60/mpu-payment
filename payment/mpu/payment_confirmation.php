@@ -149,9 +149,9 @@ function onClickPayment(){
 // 	 document.getElementById("payment_confirmation").submit();
 //     	document.getElementById("visa_payment").submit();
 	console.log("Hello World");
-	
-	setTimeout(function(){ document.getElementById("payment_confirmation").submit();}, 3000);   
-	setTimeout(function(){ document.getElementById("visa_payment").submit();}, 6000);  
+	setTimeout(function(){ document.getElementById("visa_payment").submit();}, 3000); 
+	setTimeout(function(){ document.getElementById("payment_confirmation").submit();}, 6000);   
+	 
 	
 }
    

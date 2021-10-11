@@ -11,6 +11,10 @@ try{
     exit("Error: " .$e->getMessage());
 } 
 
+echo "Hello World";
+
+echo $_POST['name'];
+
 if(isset($_POST['create_visa_extra'])){
     $name = $_POST['name'];
     $reference = $_POST['quantity'];

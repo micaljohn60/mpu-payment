@@ -40,6 +40,7 @@ $insert_response_query->execute();
 
 $sql_update_response = "UPDATE payment_visa SET(reference_number = :referencenub,username = :username,quantity = :quantity,transaction_id = :transaction_id,req_card_number = :req_card_number,card_type_name = :card_type_name,reason_code = :reason_code,auth_amount = :auth_amount,req_amount = :req_amount,decision = :decision) WHERE reference_number = :reqnumber";
 $query_update_response = $connection->prepare($sql_update_response);
+$query_update_response->bindParam(':reqnumber',$req_reference_number,PDO::PARAM_STR);
 $query_update_response->bindParam(':referencenub',$req_reference_number,PDO::PARAM_STR);
 $query_update_response->bindParam(':username',$name,PDO::PARAM_STR);
 $query_update_response->bindParam(':quantity',$quantity,PDO::PARAM_STR);

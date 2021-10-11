@@ -34,9 +34,13 @@ $insert_response_query->execute();
 $ref_select_sql = "SELECT reference_number FROM payment_visa";
 $ref_select_query = $connection->prepare($ref_select_sql);
 $ref_select_query->execute();
-$result = $ref_select_query->fetch(PDO::FETCH_ASSOC);
-$ans = $result['reference_number'];
-
+$result = $ref_select_query->fetchAll(PDO::FETCH_OBJ);
+foreach($result as $row){
+   $reference_number = $row->reference_number;
+   $id = $row->id;
+}
+echo $reference_number;
+echo $id;
 if($ans == $req_reference_number){
 $sql = "UPDATE payment_visa SET (
 transaction_id = :transaction_id,

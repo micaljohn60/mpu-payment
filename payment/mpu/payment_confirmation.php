@@ -106,13 +106,13 @@
     ?>
 <div>
     
-<input type="btnsubmit" id="btnsubmit" value="Process to Checkout" style="
+<button type="btnsubmit" id="btnsubmit" value="Process to Checkout" style="
     background-color: #000 !important;
     color: #fff !important;
     padding: 10px 24px 11px 24px;
     border-radius: 20px;
     margin-right: 40px;" 
-    onclick="onClickPayment()"/>
+	onclick="onClickPayment()"> Submit </button>
 </div>
 <div>
     <button style="

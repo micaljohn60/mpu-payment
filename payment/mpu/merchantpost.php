@@ -10,14 +10,7 @@ try{
 }catch(PDOException $e){
     exit("Error: " .$e->getMessage());
 } 
-$fetch_sql = "SELECT * FROM payment_visa";
-$fetch_query = $connection->prepare($fetch_sql);
-$fetch_query->execute();
-$result = $fetch_query->fetchAll(PDO::FETCH_OBJ);
-foreach($result as $row){
-   $ans = $row['reference_number'];
-   echo $ans;
-}
+
 $req_reference_number = $_REQUEST["req_reference_number"];
 $req_transaction_id = $_REQUEST["transaction_id"];
 $req_card_number = $_REQUEST["req_card_number"];
@@ -44,6 +37,20 @@ $insert_response_query->bindParam(':auth_amount',$auth_amount,PDO::PARAM_STR);
 $insert_response_query->bindParam(':req_amount',$req_amount,PDO::PARAM_STR);
 $insert_response_query->bindParam(':decision',$decision,PDO::PARAM_STR);
 $insert_response_query->execute();
+
+$sql_update_response = "UPDATE payment_visa SET(reference_number = :referencenub,username = :username,quantity = :quantity,transaction_id = :transaction_id,req_card_number = :req_card_number,card_type_name = :card_type_name,reason_code = :reason_code,auth_amount = :auth_amount,req_amount = :req_amount,decision = :decision) WHERE reference_number = :reqnumber";
+$query_update_response = $connection->prepare($sql_update_response);
+$query_update_response->bindParam(':referencenub',$req_reference_number,PDO::PARAM_STR);
+$query_update_response->bindParam(':username',$name,PDO::PARAM_STR);
+$query_update_response->bindParam(':quantity',$quantity,PDO::PARAM_STR);
+$query_update_response->bindParam(':transaction_id',$req_transaction_id,PDO::PARAM_STR);
+$query_update_response->bindParam(':req_card_number',$req_card_number,PDO::PARAM_STR);
+$query_update_response->bindParam(':card_type_name',$card_type_name,PDO::PARAM_STR);
+$query_update_response->bindParam(':reason_code',$reason_code,PDO::PARAM_STR);
+$query_update_response->bindParam(':auth_amount',$auth_amount,PDO::PARAM_STR);
+$query_update_response->bindParam(':req_amount',$req_amount,PDO::PARAM_STR);
+$query_update_response->bindParam(':decision',$decision,PDO::PARAM_STR);
+$query_update_response->execute();
 
 
 ?>

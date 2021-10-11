@@ -11,9 +11,9 @@ try{
     exit("Error: " .$e->getMessage());
 } 
 
-    $name = $_REQUEST['bill_to_forename'];
-    $reference = $_REQUEST['quantity'];
-    $quantity  = $_REQUEST['reference_number'];
+    $name = $_POST['bill_to_forename'];
+    $reference = $_POST['quantity'];
+    $quantity  = $_POST['reference_number'];
     
 
 

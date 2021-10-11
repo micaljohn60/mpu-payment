@@ -31,13 +31,17 @@ $insert_response_query->bindParam(':decision',$decision,PDO::PARAM_STR);
 $insert_response_query->execute();
 
 
-$ref_select_sql = "SELECT reference_number FROM payment_visa";
+$ref_select_sql = "SELECT * FROM payment_visa";
 $ref_select_query = $connection->prepare($ref_select_sql);
 $ref_select_query->execute();
-$result = $ref_select_query->fetch(PDO::FETCH_ASSOC);
-$ans = $result['reference_number'];
-
-if($ans == $req_reference_number){
+$result = $ref_select_query->fetchAll(PDO::FETCH_OBJ);
+foreach($result as $row){
+    $name = $row->username;
+    $quantity = $row->quantity;
+    $reference_number = $row->reference_number;
+}
+echo $name;
+if($reference_number === $req_reference_number){
 $sql = "UPDATE payment_visa SET (
 transaction_id = :transaction_id,
 req_card_number = :req_card_number,

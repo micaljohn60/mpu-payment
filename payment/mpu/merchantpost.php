@@ -15,7 +15,7 @@ $fetch_query = $connection->prepare($fetch_sql);
 $fetch_query->execute();
 $result = $fetch_query->fetchAll(PDO::FETCH_OBJ);
 foreach($result as $row){
-   $ans = $result['reference_number'];
+   $ans = $row['reference_number'];
    echo $ans;
 }
 $req_reference_number = $_REQUEST["req_reference_number"];

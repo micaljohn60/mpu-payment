@@ -13,11 +13,11 @@ try{
 $fetch_sql = "SELECT reference_number FROM payment_visa";
 $fetch_query = $connection->prepare($fetch_sql);
 $fetch_query->execute();
-$result = $fetch_query->fetch(PDO::FETCH_ASSOC);
-$ans = $result['reference_number'];
-
-echo $ans;
-
+$result = $fetch_query->fetchAll(PDO::FETCH_OBJ);
+foreach($result as $row){
+   $ans = $result['reference_number'];
+   echo $ans;
+}
 $req_reference_number = $_REQUEST["req_reference_number"];
 $req_transaction_id = $_REQUEST["transaction_id"];
 $req_card_number = $_REQUEST["req_card_number"];

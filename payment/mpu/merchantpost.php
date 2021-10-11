@@ -40,9 +40,9 @@ foreach($result as $row){
     $quantity = $row->quantity;
     $reference_number = $row->reference_number;
  
- echo $name;
- echo $quantity;
- echo $reference_number;
+    if($reference_number == $req_reference_number) {
+      echo "Good to go";
+    }
 }
 
 if($reference_number === $req_reference_number){

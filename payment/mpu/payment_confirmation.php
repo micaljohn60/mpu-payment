@@ -1,7 +1,31 @@
 <?php
- include 'security.php'
- ?>
+ include 'security.php';
+ define('DB_HOST','localhost');
+ define('DB_USER','neptrior_mnine');
+ define('DB_PASS','Pas$m9db');
+ define('DB_NAME','neptrior_mninedb');
+ 
+try{
+    $connection = new PDO("mysql:host=".DB_HOST.";dbname=".DB_NAME,DB_USER,DB_PASS);
+}catch(PDOException $e){
+    exit("Error: " .$e->getMessage());
+} 
 
+
+
+
+    $name = $_POST['name'];
+    $reference = $_POST['reference_number'];
+    $quantity  = $_POST['quantity']; 
+
+$sql = "INSERT INTO payment_visa(reference_number,username,quantity) VALUE (:reference_number,:username,:quantity)";
+$insert_query = $connection->prepare($sql);
+$insert_query->bindParam(':reference_number',$name,PDO::PARAM_STR);
+$insert_query->bindParam(':username',$reference,PDO::PARAM_STR);
+$insert_query->bindParam(':quantity',$quantity,PDO::PARAM_STR);
+$insert_query->execute();
+
+?>
 <html>
 <head>
     <title>Secure Acceptance - Payment Form</title> 
@@ -150,51 +174,17 @@ function onClickPayment(){
     margin-bottom:100px;
 "><a href="https://m9estore.com/" style="color: #fff !important;">Cancel</a></button>
 </div>
-</form>
-	    
-	    
-<!-- 	    <button class="button button-gray" onclick="submitform()"><span class="accept">Accept</span></button> -->
-	    
-	   <input type="button" id="btnsubmit" value="Process to Checkout" style="
+	    <input type="button" id="btnsubmit" value="Process to Checkout" style="
     background-color: #000 !important;
     color: #fff !important;
     padding: 10px 24px 11px 24px;
     border-radius: 20px;
     margin-right: 40px;" 
-	onclick="onClickPayment()" value="submit"/>
-
+	/>
+</form>
 </center>
 </div>
-<!-- 	<script>
-    function post(path, params, method='post') {
 
-// The rest of this code assumes you are not using a library.
-// It can be made less verbose if you use one.
-const form = document.createElement('form');
-form.method = method;
-form.action = path;
-
-for (const key in params) {
-  if (params.hasOwnProperty(key)) {
-    const hiddenField = document.createElement('input');
-    hiddenField.type = 'hidden';
-    hiddenField.name = key;
-    hiddenField.value = params[key];
-
-    form.appendChild(hiddenField);
-  }
-}
-
-document.body.appendChild(form);
-form.submit();
-	</script> -->
-
-<!-- 	 <script>
-		submitform = function(){ 
-		document.getElementById("payment_confirmation").submit();
-		document.getElementById("visa_payment").submit();
-		}
-	    </script> -->
 </body>
 
 </html>

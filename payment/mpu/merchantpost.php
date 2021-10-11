@@ -19,8 +19,9 @@ $auth_amount = $_REQUEST["auth_amount"];
 $req_amount = $_REQUEST["req_amount"];
 $decision = $_REQUEST["decision"];
 
-$sql_insert_response = "INSERT INTO payment_visa(transaction_id,req_card_number,card_type_name,reason_code,auth_amount,req_amount,decision) VALUE (:transaction_id,:req_card_number,:card_type_name,:reason_code,:auth_amount,:req_amount,:decision)";
+$sql_insert_response = "INSERT INTO payment_visa(reference_number,transaction_id,req_card_number,card_type_name,reason_code,auth_amount,req_amount,decision) VALUE (:referencenub:transaction_id,:req_card_number,:card_type_name,:reason_code,:auth_amount,:req_amount,:decision)";
 $insert_response_query = $connection->prepare($sql_insert_response);
+$insert_response_query->bindParam(':referencenub',$req_reference_number,PDO::PARAM_STR);
 $insert_response_query->bindParam(':transaction_id',$req_transaction_id,PDO::PARAM_STR);
 $insert_response_query->bindParam(':req_card_number',$req_card_number,PDO::PARAM_STR);
 $insert_response_query->bindParam(':card_type_name',$card_type_name,PDO::PARAM_STR);
@@ -45,8 +46,9 @@ card_type_name = :card_type_name,
 reason_code = :reason_code,
 auth_amount = :auth_amount,
 req_amount = :req_amount,
-decision = :decision)";
+decision = :decision WHERE reference_number =:refencereq)";
 $insert_query = $connection->prepare($sql);
+$insert_query->bindParam(':refencereq',$req_reference_number,PDO::PARAM_STR);   
 $insert_query->bindParam(':transaction_id',$req_transaction_id,PDO::PARAM_STR);
 $insert_query->bindParam(':req_card_number',$req_card_number,PDO::PARAM_STR);
 $insert_query->bindParam(':card_type_name',$card_type_name,PDO::PARAM_STR);

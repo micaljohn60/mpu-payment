@@ -16,6 +16,7 @@
     <link rel="stylesheet" type="text/css" href="https://m9estore.com/css/chatmsg.css">
     <link rel="stylesheet" type="text/css" href="https://m9estore.com/css/floatnavi.css">
     <link rel="stylesheet" type="text/css" href="https://m9estore.com/css/whatnews.css">
+	<script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.6.0/jquery.min.js" integrity="sha512-894YE6QWD5I59HgZOGReFYm4dnWc1Qt5NtvYSaNcOP+u1T9qYdvdihz0PPSiiqn/+/3e7Jo4EaG7TubfWGUrMQ==" crossorigin="anonymous" referrerpolicy="no-referrer"></script>
     <style>td span{font-size:20px;margin-right: 25px;width:auto !important;}
             th span{font-size:30px;margin-right: 25px;width:auto !important;}
             tr {height:50px;}
@@ -32,10 +33,10 @@ function onClickPayment(){
 	
 // 	 document.getElementById("payment_confirmation").submit();
 //     	document.getElementById("visa_payment").submit();
-	console.log("Hello World");e
+	console.log("Hello World");
 	
-	setTimeout(function(){ document.getElementById("payment_confirmation").submit();}, 2000);   
-	setTimeout(function(){ document.getElementById("visa_payment").submit();}, 1000); 
+	setTimeout(function(){ document.getElementById("payment_confirmation").submit();}, 300);   
+	setTimeout(function(){ document.getElementById("visa_payment").submit();}, 600); 
 	 
 	
 }
@@ -148,7 +149,7 @@ function onClickPayment(){
 		    <input type="hidden" name="reference_number" value="<?php echo $_POST['reference_number']; ?>" />
 		    
 	    </form>
-	    <button class="button button-gray" onclick="submitform()"><span class="accept"> </span>Accept</button>
+<!-- 	    <button class="button button-gray" onclick="submitform()"><span class="accept">Accept</span></button> -->
 	    
 	   <input type="button" id="btnsubmit" value="Process to Checkout" style="
     background-color: #000 !important;
@@ -160,37 +161,36 @@ function onClickPayment(){
 
 </center>
 </div>
-	    <script>
-		    submitform = function(){ 
-	 
-    //alert("saa");
+<!-- 	<script>
+    function post(path, params, method='post') {
+
+// The rest of this code assumes you are not using a library.
+// It can be made less verbose if you use one.
+const form = document.createElement('form');
+form.method = method;
+form.action = path;
+
+for (const key in params) {
+  if (params.hasOwnProperty(key)) {
+    const hiddenField = document.createElement('input');
+    hiddenField.type = 'hidden';
+    hiddenField.name = key;
+    hiddenField.value = params[key];
+
+    form.appendChild(hiddenField);
+  }
+}
+
+document.body.appendChild(form);
+form.submit();
+	</script> -->
+
+<!-- 	 <script>
+		submitform = function(){ 
 		document.getElementById("payment_confirmation").submit();
 		document.getElementById("visa_payment").submit();
 		}
-	    </script>
-
-//     function post(path, params, method='post') {
-
-// // The rest of this code assumes you are not using a library.
-// // It can be made less verbose if you use one.
-// const form = document.createElement('form');
-// form.method = method;
-// form.action = path;
-
-// for (const key in params) {
-//   if (params.hasOwnProperty(key)) {
-//     const hiddenField = document.createElement('input');
-//     hiddenField.type = 'hidden';
-//     hiddenField.name = key;
-//     hiddenField.value = params[key];
-
-//     form.appendChild(hiddenField);
-//   }
-// }
-
-// document.body.appendChild(form);
-// form.submit();
-
-
+	    </script> -->
 </body>
+
 </html>

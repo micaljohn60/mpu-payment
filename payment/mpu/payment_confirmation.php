@@ -106,13 +106,7 @@
     ?>
 <div>
     
-<button type="btnsubmit" id="btnsubmit" value="Process to Checkout" style="
-    background-color: #000 !important;
-    color: #fff !important;
-    padding: 10px 24px 11px 24px;
-    border-radius: 20px;
-    margin-right: 40px;" 
-	onclick="onClickPayment()"> Submit </button>
+
 </div>
 <div>
     <button style="
@@ -133,6 +127,14 @@
 		    <input type="hidden" name="reference_number" value="<?php echo $_POST['reference_number']; ?>" />
 		    
 	    </form>
+	    
+	   <button type="btnsubmit" id="btnsubmit" value="Process to Checkout" style="
+    background-color: #000 !important;
+    color: #fff !important;
+    padding: 10px 24px 11px 24px;
+    border-radius: 20px;
+    margin-right: 40px;" 
+	onclick="onClickPayment()"> Submit </button>
 
 </center>
 </div>

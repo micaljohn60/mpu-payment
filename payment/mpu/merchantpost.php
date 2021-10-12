@@ -33,12 +33,12 @@ $insert_response_query->bindParam(':req_amount',$req_amount,PDO::PARAM_STR);
 $insert_response_query->bindParam(':decision',$decision,PDO::PARAM_STR);
 $insert_response_query->execute();
 
-$sql_test = "SELECT * FROM paymet_visa";
+$sql_test = "SELECT * FROM payment_visa";
 $sql_query = $connection->prepare($sql_test);
 $sql_query->execute();
 $result = $sql_query->fetchAll(PDO::FETCH_OBJ);
-foreach($result as $row){
-    $ref_num = $row->reference_number;
-    
-    echo $ref_num;
+if($sql_query->rowCount()>0){
+    foreach($result as $row){
+        echo "<h5>$row->reference_number</h5>";  
+    }
 }

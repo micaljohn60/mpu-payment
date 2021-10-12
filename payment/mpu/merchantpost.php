@@ -1,15 +1,16 @@
-<?php 
- include 'security.php';
- define('DB_HOST','localhost');
- define('DB_USER','neptrior_mnine');
- define('DB_PASS','Pas$m9db');
- define('DB_NAME','neptrior_mninedb');
- 
-try{
-    $connection = new PDO("mysql:host=".DB_HOST.";dbname=".DB_NAME,DB_USER,DB_PASS);
-}catch(PDOException $e){
-    exit("Error: " .$e->getMessage());
-} 
+
+<?php
+//DB details
+include 'security.php';
+$dbHost = 'localhost';
+$dbUsername = 'neptrior_mnine';
+$dbPassword = 'Pas$m9db';
+$dbName = 'neptrior_mninedb';
+//Create connection and select DB
+$db = new mysqli($dbHost, $dbUsername, $dbPassword, $dbName);
+if($db->connect_error){
+   die("Unable to connect database: " . $db->connect_error);
+}
 
 $req_reference_number = $_REQUEST["req_reference_number"];
 $req_transaction_id = $_REQUEST["transaction_id"];
@@ -25,17 +26,8 @@ if(empty($req_reference_number) && empty($req_transaction_id) && empty($req_card
  header('Location: https://m9estore.com/');
 }
 else{
-$sql_update_response = "UPDATE payment_visa SET transaction_id = :transaction_id,req_card_number = :req_card_number,card_type_name = :card_type_name,reason_code = :reason_code,auth_amount = :auth_amount,req_amount = :req_amount,decision = :decision WHERE reference_number = :reqnumber";
-$query_update_response = $connection->prepare($sql_update_response);
-$query_update_response->bindParam(':reqnumber',$_REQUEST["req_reference_number"],PDO::PARAM_STR);
-$query_update_response->bindParam(':transaction_id',$req_transaction_id,PDO::PARAM_STR);
-$query_update_response->bindParam(':req_card_number',$req_card_number,PDO::PARAM_STR);
-$query_update_response->bindParam(':card_type_name',$card_type_name,PDO::PARAM_STR);
-$query_update_response->bindParam(':reason_code',$reason_code,PDO::PARAM_INT);
-$query_update_response->bindParam(':auth_amount',$auth_amount,PDO::PARAM_INT);
-$query_update_response->bindParam(':req_amount',$req_amount,PDO::PARAM_INT);
-$query_update_response->bindParam(':decision',$decision,PDO::PARAM_STR);
-$query_update_response->execute();
+   $update = $db->query("UPDATE payment_visa SET transaction_id='$req_transaction_id',req_card_number='$req_card_number',reason_code='$reason_code',auth_amount='$auth_amount',req_amount='$req_amount',decision='$decision' WHERE reference_number='$req_reference_number' ");
+
 }
 // $sql_find_reference_number = "SELECT reference_number FROM payment_visa";
 // $query_find_reference_number = $connection->prepare($sql_find_reference_number);

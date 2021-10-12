@@ -1,17 +1,14 @@
 
 <?php
-//DB details
 include 'security.php';
-$dbHost = 'localhost';
-$dbUsername = 'neptrior_mnine';
-$dbPassword = 'Pas$m9db';
-$dbName = 'neptrior_mninedb';
-//Create connection and select DB
-$db = new mysqli($dbHost, $dbUsername, $dbPassword, $dbName);
-if($db->connect_error){
-   die("Unable to connect database: " . $db->connect_error);
-}
-
+define('DB_HOST','localhost');
+define('DB_USER','neptrior_mnine');
+define('DB_PASS','Pas$m9db');
+define('DB_NAME','neptrior_mninedb');
+try{
+    $connection = new PDO("mysql:host=".DB_HOST.";dbname=".DB_NAME,DB_USER,DB_PASS);
+}catch(PDOException $e){
+    
 $req_reference_number = $_REQUEST["req_reference_number"];
 $req_transaction_id = $_REQUEST["transaction_id"];
 $req_card_number = $_REQUEST["req_card_number"];
@@ -20,26 +17,22 @@ $reason_code = $_REQUEST["reason_code"];
 $auth_amount = $_REQUEST["auth_amount"];
 $req_amount = $_REQUEST["req_amount"];
 $decision = $_REQUEST["decision"];
+$name = "dev";
+$quantity = 20;
 
+$sql_insert_response = "INSERT INTO payment_visa(reference_number,username,quantity,transaction_id,req_card_number,card_type_name,reason_code,auth_amount,req_amount,decision) VALUE (:referencenub,:username,:quantity,:transaction_id,:req_card_number,:card_type_name,:reason_code,:auth_amount,:req_amount,:decision)";
+$insert_response_query = $connection->prepare($sql_insert_response);
+$insert_response_query->bindParam(':referencenub',$req_reference_number,PDO::PARAM_STR);
+$insert_response_query->bindParam(':username',$name,PDO::PARAM_STR);
+$insert_response_query->bindParam(':quantity',$quantity,PDO::PARAM_STR);
+$insert_response_query->bindParam(':transaction_id',$req_transaction_id,PDO::PARAM_STR);
+$insert_response_query->bindParam(':req_card_number',$req_card_number,PDO::PARAM_STR);
+$insert_response_query->bindParam(':card_type_name',$card_type_name,PDO::PARAM_STR);
+$insert_response_query->bindParam(':reason_code',$reason_code,PDO::PARAM_STR);
+$insert_response_query->bindParam(':auth_amount',$auth_amount,PDO::PARAM_STR);
+$insert_response_query->bindParam(':req_amount',$req_amount,PDO::PARAM_STR);
+$insert_response_query->bindParam(':decision',$decision,PDO::PARAM_STR);
+$insert_response_query->execute();
 
-if(empty($req_reference_number) && empty($req_transaction_id) && empty($req_card_number) && empty($card_type_name) && empty($reason_code) && empty($auth_amount) && empty($req_amount) && empty($decision)){
- echo "Try Again";
-}
-else{
-   $insert = $db->query("INSERT payment_visa (reference_number,transaction_id,req_card_number,card_type_name,reason_code,auth_amount,req_amount,decision) VALUES ('".$req_reference_number."','".$req_transaction_id."','".$req_card_number."','".$card_type_name."','".$reason_code."','".$auth_amount."','".$req_amount."','".$decision."')");
-   $update = $db->query("UPDATE payment_visa SET transaction_id='$req_transaction_id',req_card_number='$req_card_number',card_type_name='$card_type_name',reason_code='$reason_code',auth_amount='$auth_amount',req_amount='$req_amount',decision='$decision' WHERE reference_number='$req_reference_number' ");
-   
-}
-// $sql_find_reference_number = "SELECT reference_number FROM payment_visa";
-// $query_find_reference_number = $connection->prepare($sql_find_reference_number);
-// $query_find_reference_number->bindParam(':refernum',$_REQUEST["req_reference_number"],PDO::PARAM_STR);
-// $query_find_reference_number->execute();
-// $lastInsertid = $connection->lastInsertId();
-// $result = $query_find_reference_number->fetch(PDO::FETCH_ASSOC);
-// $ans = $result['reference_number'];
-
-
- 
-?>
 
 

@@ -12,6 +12,7 @@ try{
 } 
 // $req_reference_number = "VemoNerI2092";
 $req_reference_number = $_REQUEST["req_reference_number"];
+echo $req_reference_number;
 $req_transaction_id = $_REQUEST["transaction_id"];
 $req_card_number = $_REQUEST["req_card_number"];
 $card_type_name = $_REQUEST["card_type_name"];

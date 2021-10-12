@@ -23,7 +23,7 @@ $decision = $_REQUEST["decision"];
 // $name = "yelinnaung@dev";
 // $quantity = 20;
 
-$sql_find_reference_number = "SELECT reference_number FROM payment_visa WHERE reference_number =:refernum";
+$sql_find_reference_number = "SELECT * FROM payment_visa WHERE reference_number =:refernum";
 $query_find_reference_number = $connection->prepare($sql_find_reference_number);
 $query_find_reference_number->bindParam(':refernum',$_REQUEST["req_reference_number"],PDO::PARAM_STR);
 $query_find_reference_number->execute();
@@ -38,7 +38,7 @@ $sql_update_response = "UPDATE payment_visa SET username = :username, quantity =
 $query_update_response = $connection->prepare($sql_update_response);
 $query_update_response->bindParam(':reqnumber',$req_reference_number,PDO::PARAM_STR);
 $query_update_response->bindParam(':username',$username,PDO::PARAM_STR);
-  $query_update_response->bindParam(':quantity',$quantity,PDO::PARAM_STR);
+ $query_update_response->bindParam(':quantity',$quantity,PDO::PARAM_STR);
 $query_update_response->bindParam(':transaction_id',$req_transaction_id,PDO::PARAM_STR);
 $query_update_response->bindParam(':req_card_number',$req_card_number,PDO::PARAM_STR);
 $query_update_response->bindParam(':card_type_name',$card_type_name,PDO::PARAM_STR);

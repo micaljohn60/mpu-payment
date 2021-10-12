@@ -27,7 +27,7 @@ if(empty($req_reference_number) && empty($req_transaction_id) && empty($req_card
 }
 else{
    $update = $db->query("UPDATE payment_visa SET transaction_id='$req_transaction_id',req_card_number='$req_card_number',reason_code='$reason_code',auth_amount='$auth_amount',req_amount='$req_amount',decision='$decision' WHERE reference_number='$req_reference_number' ");
-
+   printf("Error message: %s\n", $mysqli->error);
 }
 // $sql_find_reference_number = "SELECT reference_number FROM payment_visa";
 // $query_find_reference_number = $connection->prepare($sql_find_reference_number);

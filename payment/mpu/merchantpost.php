@@ -8,7 +8,9 @@ define('DB_NAME','neptrior_mninedb');
 try{
     $connection = new PDO("mysql:host=".DB_HOST.";dbname=".DB_NAME,DB_USER,DB_PASS);
 }catch(PDOException $e){
-    
+    exit("Error: " .$e->getMessage());
+} 
+
 $req_reference_number = $_REQUEST["req_reference_number"];
 $req_transaction_id = $_REQUEST["transaction_id"];
 $req_card_number = $_REQUEST["req_card_number"];

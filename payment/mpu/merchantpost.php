@@ -32,8 +32,6 @@ $lastInsertid = $connection->lastInsertId();
 $result = $query_find_reference_number->fetch(PDO::FETCH_ASSOC);
 $ans = $result['reference_number'];
 
-echo $ans;
-if($lastInsertid){
 $sql_update_response = "UPDATE payment_visa SET transaction_id = :transaction_id,req_card_number = :req_card_number,card_type_name = :card_type_name,reason_code = :reason_code,auth_amount = :auth_amount,req_amount = :req_amount,decision = :decision WHERE reference_number = :reqnumber";
 $query_update_response = $connection->prepare($sql_update_response);
 $query_update_response->bindParam(':reqnumber',$ans,PDO::PARAM_STR);
@@ -45,9 +43,7 @@ $query_update_response->bindParam(':auth_amount',$auth_amount,PDO::PARAM_INT);
 $query_update_response->bindParam(':req_amount',$req_amount,PDO::PARAM_INT);
 $query_update_response->bindParam(':decision',$decision,PDO::PARAM_STR);
 $query_update_response->execute();
- }else{
-   echo "Not Updated";
-}
+ 
 ?>
 
 

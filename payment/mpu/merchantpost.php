@@ -33,6 +33,3 @@ $insert_response_query->bindParam(':auth_amount',$auth_amount,PDO::PARAM_STR);
 $insert_response_query->bindParam(':req_amount',$req_amount,PDO::PARAM_STR);
 $insert_response_query->bindParam(':decision',$decision,PDO::PARAM_STR);
 $insert_response_query->execute();
-
-
-

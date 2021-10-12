@@ -10,7 +10,7 @@ try{
 }catch(PDOException $e){
     exit("Error: " .$e->getMessage());
 } 
-$req_reference_number = VemoNerI20920ts;
+$req_reference_number = "VemoNerI20920ts";
 // $req_reference_number = $_REQUEST["req_reference_number"];
 $req_transaction_id = $_REQUEST["transaction_id"];
 $req_card_number = $_REQUEST["req_card_number"];
@@ -29,7 +29,11 @@ $query_find_reference_number->execute();
 $result = $query_find_reference_number->fetch(PDO::FETCH_ASSOC);
 $ans = $result['reference_number'];
 
-echo $ans;
+if($ans === $req_reference_number){
+  echo "Updated";
+}else{
+  echo "Not Updated";
+}
 
 
 $sql_update_response = "UPDATE payment_visa SET(transaction_id = :transaction_id,req_card_number = :req_card_number,card_type_name = :card_type_name,reason_code = :reason_code,auth_amount = :auth_amount,req_amount = :req_amount,decision = :decision) WHERE reference_number = :reqnumber";

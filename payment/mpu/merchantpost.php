@@ -26,7 +26,7 @@ if(empty($req_reference_number) && empty($req_transaction_id) && empty($req_card
  echo "Try Again";
 }
 else{
-   $insert = $db->query("INSERT payment_visa (reference_number,transaction_id,req_card_number,card_type_name,reason_code,auth_amount,req_amount,decision) VALUES ('".$req_reference_number."','".$req_transaction_id."','".$req_card_number."','".$card_type_name."','".$reason_code."','".$auth_amount."','".$req_amount."','".$decision."')")
+   $insert = $db->query("INSERT payment_visa (reference_number,transaction_id,req_card_number,card_type_name,reason_code,auth_amount,req_amount,decision) VALUES ('".$req_reference_number."','".$req_transaction_id."','".$req_card_number."','".$card_type_name."','".$reason_code."','".$auth_amount."','".$req_amount."','".$decision."')");
    $update = $db->query("UPDATE payment_visa SET transaction_id='$req_transaction_id',req_card_number='$req_card_number',card_type_name='$card_type_name',reason_code='$reason_code',auth_amount='$auth_amount',req_amount='$req_amount',decision='$decision' WHERE reference_number='$req_reference_number' ");
    
 }

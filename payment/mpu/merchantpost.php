@@ -22,7 +22,7 @@ $decision = $_REQUEST["decision"];
 $name = "dev";
 $quantity = 20;
 echo $name;
-$sql_insert_response = "INSERT INTO payment_visa(reference_number,transaction_id,req_card_number,card_type_name,reason_code,auth_amount,req_amount,decision) VALUE (:referencenub,:transaction_id,:req_card_number,:card_type_name,:reason_code,:auth_amount,:req_amount,:decision)";
+$sql_insert_response = "INSERT INTO payment_visa (reference_number,transaction_id,req_card_number,card_type_name,reason_code,auth_amount,req_amount,decision) VALUE (:referencenub,:transaction_id,:req_card_number,:card_type_name,:reason_code,:auth_amount,:req_amount,:decision)";
 $insert_response_query = $connection->prepare($sql_insert_response);
 $insert_response_query->bindParam(':referencenub',$req_reference_number,PDO::PARAM_STR);
 $insert_response_query->bindParam(':transaction_id',$req_transaction_id,PDO::PARAM_STR);

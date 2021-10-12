@@ -23,7 +23,7 @@ $decision = $_REQUEST["decision"];
 
 
 if(empty($req_reference_number) && empty($req_transaction_id) && empty($req_card_number) && empty($card_type_name) && empty($reason_code) && empty($auth_amount) && empty($req_amount) && empty($decision)){
- header('Location: https://m9estore.com/');
+ echo "Try Again";
 }
 else{
    $update = $db->query("UPDATE payment_visa SET transaction_id='$req_transaction_id',req_card_number='$req_card_number',reason_code='$reason_code',auth_amount='$auth_amount',req_amount='$req_amount',decision='$decision' WHERE reference_number='$req_reference_number' ");

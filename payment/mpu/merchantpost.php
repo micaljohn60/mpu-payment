@@ -28,9 +28,10 @@ $sql_find_reference_number = "SELECT reference_number FROM payment_visa WHERE re
 $query_find_reference_number = $connection->prepare($sql_find_reference_number);
 $query_find_reference_number->bindParam(':refernum',$_REQUEST["req_reference_number"],PDO::PARAM_STR);
 $query_find_reference_number->execute();
+$lastInsertid = $connection->lastInsertId();
 $result = $query_find_reference_number->fetch(PDO::FETCH_ASSOC);
 $ans = $result['reference_number'];
-$lastInsertid = $connection->lastInsertId();
+
 echo $lastInsertid;
 if($lastInsertid){
 $sql_update_response = "UPDATE payment_visa SET transaction_id = :transaction_id,req_card_number = :req_card_number,card_type_name = :card_type_name,reason_code = :reason_code,auth_amount = :auth_amount,req_amount = :req_amount,decision = :decision WHERE reference_number = :reqnumber";

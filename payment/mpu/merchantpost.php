@@ -6,7 +6,7 @@ define('DB_USER','neptrior_mnine');
 define('DB_PASS','Pas$m9db');
 define('DB_NAME','neptrior_mninedb');
 try{
-    $connection = new PDO("mysql:host=".DB_HOST.";dbname=".DB_NAME,DB_USER,DB_PASS);
+    $connection = new PDO("mysql:host=".DB_HOS.";dbname=".DB_NAME,DB_USER,DB_PASS);
 }catch(PDOException $e){
     exit("Error: " .$e->getMessage());
 } 
@@ -21,7 +21,6 @@ $req_amount = $_REQUEST["req_amount"];
 $decision = $_REQUEST["decision"];
 $name = "dev";
 $quantity = 20;
-echo $name;
 $sql_insert_response = "INSERT INTO payment_visa (reference_number,transaction_id,req_card_number,card_type_name,reason_code,auth_amount,req_amount,decision) VALUE (:referencenub,:transaction_id,:req_card_number,:card_type_name,:reason_code,:auth_amount,:req_amount,:decision)";
 $insert_response_query = $connection->prepare($sql_insert_response);
 $insert_response_query->bindParam(':referencenub',$req_reference_number,PDO::PARAM_STR);

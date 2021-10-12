@@ -1,6 +1,6 @@
 
 <?php
-include 'security.php';
+
 define('DB_HOST','localhost');
 define('DB_USER','neptrior_mnine');
 define('DB_PASS','Pas$m9db');
@@ -11,14 +11,14 @@ try{
     exit("Error: " .$e->getMessage());
 } 
 
-$req_reference_number = $_POST["req_reference_number"];
-$req_transaction_id = $_POST["transaction_id"];
-$req_card_number = $_POST["req_card_number"];
-$card_type_name = $_POST["card_type_name"];
-$reason_code = $_POST["reason_code"];
-$auth_amount = $_POST["auth_amount"];
-$req_amount = $_POST["req_amount"];
-$decision = $_POST["decision"];
+$req_reference_number = $_REQUEST["req_reference_number"];
+$req_transaction_id = $_REQUEST["transaction_id"];
+$req_card_number = $_REQUEST["req_card_number"];
+$card_type_name = $_REQUEST["card_type_name"];
+$reason_code = $_REQUEST["reason_code"];
+$auth_amount = $_REQUEST["auth_amount"];
+$req_amount = $_REQUEST["req_amount"];
+$decision = $_REQUEST["decision"];
 $name = "dev";
 $quantity = 20;
 echo $name;

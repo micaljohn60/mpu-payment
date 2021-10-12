@@ -6,7 +6,7 @@ define('DB_USER','neptrior_mnine');
 define('DB_PASS','Pas$m9db');
 define('DB_NAME','neptrior_mninedb');
 try{
-    $connection = new PDO("mysql:host=".DB_HOS.";dbname=".DB_NAME,DB_USER,DB_PASS);
+    $connection = new PDO("mysql:host=".DB_HOST.";dbname=".DB_NAME,DB_USER,DB_PASS);
 }catch(PDOException $e){
     exit("Error: " .$e->getMessage());
 } 
@@ -32,3 +32,13 @@ $insert_response_query->bindParam(':auth_amount',$auth_amount,PDO::PARAM_STR);
 $insert_response_query->bindParam(':req_amount',$req_amount,PDO::PARAM_STR);
 $insert_response_query->bindParam(':decision',$decision,PDO::PARAM_STR);
 $insert_response_query->execute();
+
+$sql_test = "SELECT * FROM paymet_visa";
+$sql_query = $connection->prepare($sql_test);
+$sql_query->execute();
+$result = $sql_query->fetchAll(PDO::FETCH_OBJ);
+foreach($result as $row){
+    $ref_num = $row->reference_number;
+    
+    echo $ref_num;
+}

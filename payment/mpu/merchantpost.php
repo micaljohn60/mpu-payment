@@ -24,7 +24,7 @@ $quantity = 20;
 
 $sql_find_reference_number = "SELECT reference_number FROM payment_visa WHERE reference_number =:refernum";
 $query_find_reference_number = $connection->prepare($sql_find_reference_number);
-$query_find_reference_number->bindParam(':refernum',$req_reference_number,PDO::PARAM_STR);
+$query_find_reference_number->bindParam(':refernum',$_REQUEST["req_reference_number"],PDO::PARAM_STR);
 $query_find_reference_number->execute();
 $result = $query_find_reference_number->fetch(PDO::FETCH_ASSOC);
 $ans = $result['reference_number'];

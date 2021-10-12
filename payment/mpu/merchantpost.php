@@ -10,6 +10,7 @@ try{
 }catch(PDOException $e){
     exit("Error: " .$e->getMessage());
 } 
+echo "Hello World";
 // $req_reference_number = "VemoNerI2092";
 $req_reference_number = $_REQUEST["req_reference_number"];
 echo $req_reference_number;

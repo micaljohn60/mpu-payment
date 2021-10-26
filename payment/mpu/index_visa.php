@@ -1,6 +1,4 @@
 <?php
-
-<?php
  include 'security.php';
  define('DB_HOST','localhost');
  define('DB_USER','neptrior_mnine');

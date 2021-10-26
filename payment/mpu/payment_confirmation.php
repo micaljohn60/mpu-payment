@@ -12,11 +12,11 @@ try{
 } 
 
 //Save Visa Information
-$name = $_REQUEST['bill_to_forename'];
-$name1 = $_REQUEST['bill_to_forename'];
-$quantity  = $_REQUEST['quantity'];
-$item_name = $_REQUEST["item_#_name"];
-$reference_number = $_REQUEST["reference_number"];
+$name = $_POST['bill_to_forename'];
+$name1 = $_POST['bill_to_forename'];
+$quantity  = $_POST['quantity'];
+$item_name = $_POST["item_#_name"];
+$reference_number = $_POST["reference_number"];
 
 
 $sql = "INSERT INTO payment_visa(reference_number,username,quantity,item_name) VALUE (:refnumber,:username,:quantity,:itemname)";

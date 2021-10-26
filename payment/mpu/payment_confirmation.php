@@ -16,7 +16,7 @@ try{
 //Save Visa Information
 
 
-if(isset($_POST['submit']){
+
 $name = $_POST['bill_to_forename'];
 $name1 = $_POST['bill_to_forename'];
 $quantity  = $_POST['quantity'];
@@ -30,7 +30,7 @@ $insert_query->bindParam(':username',$name,PDO::PARAM_STR);
 $insert_query->bindParam(':quantity',$quantity,PDO::PARAM_STR);
 $insert_query->bindParam(':itemname',$item_name,PDO::PARAM_STR);
 $insert_query->execute();
-}
+
 
 
 

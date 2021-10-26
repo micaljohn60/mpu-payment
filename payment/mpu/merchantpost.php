@@ -18,7 +18,7 @@ $card_type_name = $_REQUEST["card_type_name"];
 $reason_code = $_REQUEST["reason_code"];
 $auth_amount = $_REQUEST["auth_amount"];
 $req_amount = $_REQUEST["req_amount"];
-$decision = $_REQUEST["item_1_name"];
+$decision = $_REQUEST["decision"];
 
 $sql_insert_response = "INSERT INTO payment_visa_confirmation(req_reference_number,transaction_id,req_card_number,card_type_name,reason_code,auth_amount,req_amount,decision) VALUE (:referencenub,:transaction_id,:req_card_number,:card_type_name,:reason_code,:auth_amount,:req_amount,:decision)" ;
 $insert_response_query = $connection->prepare($sql_insert_response);

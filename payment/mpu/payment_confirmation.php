@@ -105,11 +105,7 @@ echo $name;
         <td><span>- <?php echo $_POST['bill_to_forename']; ?></span></td>
     </tr>
 	    
-	    <tr>
-        <td style="text-align: right;"><span>Name GGWP</span></td>
-       
-        <td><span>- <?php echo $_POST['bill_to_forename']; ?></span></td>
-    </tr>
+
 	    <h1>post name <?php echo $name; ?></h1>
 	<h1>request name <?php echo $name1; ?></h1>
 

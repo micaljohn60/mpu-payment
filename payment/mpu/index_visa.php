@@ -12,6 +12,21 @@ $order_title = $_POST["order_title"];
 
 
 
+// $name = $_POST['bill_to_forename'];
+// $name1 = $_POST['bill_to_forename'];
+// $quantity  = $_POST['quantity'];
+// $item_name = $_POST["item_#_name"];
+// $reference_number = $_POST["reference_number"];
+	
+$sql = "INSERT INTO payment_visa(reference_number,username,quantity,item_name) VALUE (:refnumber,:username,:quantity,:itemname)";
+$insert_query = $connection->prepare($sql);
+$insert_query->bindParam(':refnumber',$refrence_number,PDO::PARAM_STR);
+$insert_query->bindParam(':username',$name,PDO::PARAM_STR);
+$insert_query->bindParam(':quantity',$quantity,PDO::PARAM_STR);
+$insert_query->bindParam(':itemname',$prodtitle,PDO::PARAM_STR);
+$insert_query->execute();
+
+
 
 
 $price = str_replace( ',', '', $amount );

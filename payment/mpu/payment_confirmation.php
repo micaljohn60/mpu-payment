@@ -36,7 +36,7 @@ $insert_query->execute();
 
 
 
-echo $name;
+
 // End Save Visa Information
 ?>
 <html>
@@ -116,11 +116,7 @@ echo $name;
     </tr>
 	    
 
-	    <h1>post name <?php echo $name; ?></h1>
-	<h1>request name <?php echo $name1; ?></h1>
-	    <?php echo $quantity; ?>
-	     <?php echo $reference_number;?>
-	     <?php echo $item_name ; ?>
+
 
 
     

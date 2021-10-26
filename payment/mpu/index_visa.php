@@ -1,18 +1,5 @@
 <?php
- include 'security.php';
- define('DB_HOST','localhost');
- define('DB_USER','neptrior_mnine');
- define('DB_PASS','Pas$m9db');
- define('DB_NAME','neptrior_mninedb');
  
-try{
-    $connection = new PDO("mysql:host=".DB_HOST.";dbname=".DB_NAME,DB_USER,DB_PASS);
-    echo "Connection Success";
-}catch(PDOException $e){
-    echo $e->getMessage();
-    exit("Error: " .$e->getMessage());
-} 
-
 $email = $_POST['order_email'];
 $name = $_POST['customer_name'];
 $phone = $_POST['order_phone'];
@@ -23,29 +10,7 @@ $address = $_POST["order_address"];
 $quantity = $_POST["quantity"];
 $order_title = $_POST["order_title"];
 
-
-
-// $name = $_POST['bill_to_forename'];
-// $name1 = $_POST['bill_to_forename'];
-// $quantity  = $_POST['quantity'];
-// $item_name = $_POST["item_#_name"];
-// $reference_number = $_POST["reference_number"];
-	
-$sql = "INSERT INTO payment_visa(reference_number,username,quantity,item_name) VALUE (:refnumber,:username,:quantity,:itemname)";
-$insert_query = $connection->prepare($sql);
-$insert_query->bindParam(':refnumber',$refrence_number,PDO::PARAM_STR);
-$insert_query->bindParam(':username',$name,PDO::PARAM_STR);
-$insert_query->bindParam(':quantity',$quantity,PDO::PARAM_STR);
-$insert_query->bindParam(':itemname',$prodtitle,PDO::PARAM_STR);
-$insert_query->execute();
-
-
-
-
 $price = str_replace( ',', '', $amount );
-
-
-
 
 if( is_numeric( $price ) ) {
     $amount = $price;

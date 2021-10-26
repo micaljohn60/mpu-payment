@@ -52,6 +52,9 @@ echo $name;
       
 </head>
 <body>
+	
+	<h1>post name <?php echo $name; ?></h1>
+	<h1>request name <?php echo $name1; ?></h1>
 
  <header id="vs-navigation-header" data-auth="false" data-locale="en_mm" data-area="header" role="banner">
 <div id="vs-navigation-nav" class="vs-header-desktop" aria-label="Site" role="navigation">

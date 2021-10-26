@@ -53,9 +53,7 @@ echo $name;
 </head>
 <body>
 	
-	<h1>post name <?php echo $name; ?></h1>
-	<h1>request name <?php echo $name1; ?></h1>
-
+	
  <header id="vs-navigation-header" data-auth="false" data-locale="en_mm" data-area="header" role="banner">
 <div id="vs-navigation-nav" class="vs-header-desktop" aria-label="Site" role="navigation">
     <div class="vs-container-fluid vs-header-container" style="display: flex;
@@ -106,6 +104,9 @@ echo $name;
        
         <td><span>- <?php echo $_POST['bill_to_forename']; ?></span></td>
     </tr>
+	    <h1>post name <?php echo $name; ?></h1>
+	<h1>request name <?php echo $name1; ?></h1>
+
     
     <tr>
         <td style="text-align: right;"><span>Your Address</span></td>

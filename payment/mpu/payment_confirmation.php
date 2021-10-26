@@ -17,17 +17,17 @@ try{
 
 
 
-// $name = $_POST['bill_to_forename'];
-// $name1 = $_POST['bill_to_forename'];
-// $quantity  = $_POST['quantity'];
-// $item_name = $_POST["item_#_name"];
-// $reference_number = $_POST["reference_number"];
+$name = $_POST['bill_to_forename'];
+$name1 = $_POST['bill_to_forename'];
+$quantity  = $_POST['quantity'];
+$item_name = $_POST["item_#_name"];
+$reference_number = $_POST["reference_number"];
 
-$name =  "testing";
-$name1 = "testing";
-$quantity  = 1;
-$item_name = "Testing"; 
-$reference_number = "kel";
+// $name =  "testing";
+// $name1 = "testing";
+// $quantity  = 1;
+// $item_name = "Testing"; 
+// $reference_number = "kel";
 	
 $sql = "INSERT INTO payment_visa(reference_number,username,quantity,item_name) VALUE (:refnumber,:username,:quantity,:itemname)";
 $insert_query = $connection->prepare($sql);

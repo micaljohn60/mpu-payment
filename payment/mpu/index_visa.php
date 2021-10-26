@@ -922,10 +922,10 @@ if (empty($email)) {
 		$inv = substr(str_shuffle($permitted_chars), 0, 20);
 		echo $inv;
 		?>"><br/>
- <input type="text" name="item_#_name" value="<?php echo $prodtitle; ?>"><br>
- <input type="text" name="item_#_code" value="<?php echo $protcolor; ?>"><br>
- <input type="text" name="item_#_quantity" value="<?php echo $quantity; ?>"><br>
- <input type="text" name="line_item_count" value="<?php echo $quantity; ?>"><br>
+ <input type="text" name="item_1_name" value="<?php echo $prodtitle; ?>"><br>
+ <input type="text" name="item_2_code" value="<?php echo $protcolor; ?>"><br>
+ <input type="text" name="item_3_quantity" value="<?php echo $quantity; ?>"><br>
+ <input type="text" name="line_item_count" value="<?php echo $quantity; echo $protcolor; echo $prodtitle; ?>"><br>
  <input type="text" name="amount" size="25" value="<?php echo "$amount.00"; ?>"><br/>
             <span>currency:</span><input type="text" name="currency" size="25" value="MMK"><br/>
        </div>

@@ -3,11 +3,12 @@
 $email = $_POST['order_email'];
 $name = $_POST['customer_name'];
 $phone = $_POST['order_phone'];
-$prodtitle = $_POST['prodtitle'];
-$protcolor = $_POST['protcolor'];
+
 $amount = $_POST['tamount'];
 $address = $_POST["order_address"];
 $quantity = $_POST["quantity"];
+$prodtitle = $_POST['prodtitle'];
+$protcolor = $_POST['protcolor'];
 $order_title = $_POST["order_title"];
 
 $price = str_replace( ',', '', $amount );
@@ -912,7 +913,7 @@ if (empty($email)) {
         
         <div id="paymentDetailsSection" class="section">
  <input type="text" name="bill_to_forename" value="<?php echo $name; ?>"><br>
-<input type="text" name="bill_to_surname" value="<?php echo $name; ?>"><br>
+<input type="text" name="bill_to_surname" value="<?php echo $quantity; echo " "; echo $prodtitle; echo " "; echo $protcolor;?>"><br>
 <input type="email" name="bill_to_email" value="<?php echo $email; ?>"><br>
  <input type="text" name="bill_to_address_line1" value="<?php echo $address; ?>"><br>
  <input type="text" name="bill_to_phone" value="<?php echo $phone; ?>"><br>

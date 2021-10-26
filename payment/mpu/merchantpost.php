@@ -20,7 +20,7 @@ $auth_amount = $_REQUEST["auth_amount"];
 $req_amount = $_REQUEST["req_amount"];
 $decision = $_REQUEST["decision"];
 
-$sql_insert_response = "UPDATE payment_visa SET reference_number = :referencenub,transaction_id  = :transaction_id,req_card_number = :req_card_number,card_type_name = :card_type_name,reason_code = :reason_code,auth_amount = :auth_amount,req_amount = :req_amount,decision = :decision WHERE reference_number = :referencenub";
+$sql_insert_response = "UPDATE payment_visa SET transaction_id  = :transaction_id,req_card_number = :req_card_number,card_type_name = :card_type_name,reason_code = :reason_code,auth_amount = :auth_amount,req_amount = :req_amount,decision = :decision WHERE reference_number = :referencenub";
 $insert_response_query = $connection->prepare($sql_insert_response);
 $insert_response_query->bindParam(':referencenub',$req_reference_number,PDO::PARAM_STR);
 $insert_response_query->bindParam(':transaction_id',$req_transaction_id,PDO::PARAM_STR);

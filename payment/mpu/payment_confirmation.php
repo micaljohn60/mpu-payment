@@ -1,4 +1,4 @@
-<?php
+eeeeeeee<?php
  include 'security.php';
  define('DB_HOST','localhost');
  define('DB_USER','neptrior_mnine');
@@ -12,9 +12,9 @@ try{
 } 
 
 //Save Visa Information
-$name = $_POST['bill_to_forename'];
+$name = $_REQUEST['bill_to_forename'];
 $name1 = $_REQUEST['bill_to_forename'];
-$quantity  = $_POST['quantity'];
+$quantity  = $_REQUEST['quantity'];
 $item_name = $_REQUEST["item_#_name"];
 $reference_number = $_REQUEST["reference_number"];
 

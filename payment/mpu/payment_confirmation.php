@@ -103,7 +103,7 @@ $insert_query->execute();
     <tr>
         <td style="text-align: right;"><span>Product Color</span></td>
         
-        <td><span>- <?php echo $_POST['item_1_code']; ?></span></td>
+        <td><span>- <?php echo $_POST['item_2_code']; ?></span></td>
     </tr>
      <tr>
         <td style="text-align: right;"><span>Quantity</span></td>

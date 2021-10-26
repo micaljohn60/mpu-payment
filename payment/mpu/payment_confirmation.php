@@ -26,7 +26,7 @@ $insert_query->bindParam(':quantity',$quantity,PDO::PARAM_STR);
 $insert_query->bindParam(':itemname',$item_name,PDO::PARAM_STR);
 $insert_query->execute();
 
-echo $name1;
+echo $name;
 // End Save Visa Information
 ?>
 <html>

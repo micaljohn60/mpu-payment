@@ -16,7 +16,7 @@ try{
 //Save Visa Information
 
 
-if(isset(['submit']){
+if(isset($_POST['submit']){
 $name = $_POST['bill_to_forename'];
 $name1 = $_POST['bill_to_forename'];
 $quantity  = $_POST['quantity'];

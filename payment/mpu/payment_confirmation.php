@@ -11,23 +11,17 @@ try{
     exit("Error: " .$e->getMessage());
 } 
 
+//Save Visa Information
+$name = $_POST['bill_to_forename'];
+$quantity  = $_POST['quantity'];
 
+$sql = "INSERT INTO payment_visa(username,quantity) VALUE (:username,:quantity)";
+$insert_query = $connection->prepare($sql);
+$insert_query->bindParam(':username',$name,PDO::PARAM_STR);
+$insert_query->bindParam(':quantity',$quantity,PDO::PARAM_STR);
+$insert_query->execute();
 
-
-//     $name = $_POST['bill_to_forename'];
-//     $reference = $_POST['reference_number'];
-//     $quantity  = $_POST['quantity'];
-//     $transaction_id = 0;
-
-// $sql = "INSERT INTO payment_visa(reference_number,username,quantity,transaction_id) VALUE (:reference_number,:username,:quantity,:transaction_id)";
-// $insert_query = $connection->prepare($sql);
-// $insert_query->bindParam(':reference_number',$reference,PDO::PARAM_STR);
-// $insert_query->bindParam(':username',$name,PDO::PARAM_STR);
-// $insert_query->bindParam(':quantity',$quantity,PDO::PARAM_STR);
-// $insert_query->bindParam(':transaction_id',$transaction_id,PDO::PARAM_STR);
-
-// $insert_query->execute();
-
+// End Save Visa Information
 ?>
 <html>
 <head>

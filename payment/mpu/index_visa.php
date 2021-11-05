@@ -897,7 +897,7 @@ if (empty($email)) {
 <form id="payment_form" action="payment_confirmation.php" method="post">
 	
  <input type="hidden" name="user_name" value="<?php echo $name; ?>">
-	<input type="hidden" name="quantity" value="<?php echo $quantity; ?>">
+<!-- 	<input type="hidden" name="quantity" value="<?php echo $quantity; ?>"> -->
 	<input type="hidden" name="order_title" value="<?php echo $order_title; ?>">
 	 <input type="hidden" name="user_address" value="<?php echo $address; ?>">
     <input type="hidden" name="access_key" value="9d5568c01f83317bb1dc7ae74a3484ac">

@@ -924,6 +924,9 @@ if (empty($email)) {
 		$inv = substr(str_shuffle($permitted_chars), 0, 20);
 		echo $inv;
 		?>"><br/>
+ <input type="text" name="item_0_unit_price" value="<?php echo $prodtitle; ?>"><br>
+<input type="text" name="item_1_unit_price" value="<?php echo $prodtitle; ?>"><br>
+<input type="text" name="item_2_unit_price" value="<?php echo $prodtitle; ?>"><br>
  <input type="text" name="item_1_name" value="<?php echo $prodtitle; ?>"><br>
  <input type="text" name="item_2_code" value="<?php echo $protcolor; ?>"><br>
  <input type="text" name="item_3_quantity" value="<?php echo $quantity; ?>"><br>

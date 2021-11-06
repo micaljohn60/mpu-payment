@@ -10,7 +10,7 @@ try{
 }catch(PDOException $e){
     exit("Error: " .$e->getMessage());
 } 
-$req_name = $_REQUEST["req_bill_to_forename"];
+$req_name = $_REQUEST["req_item_1_passenger_forename"];
 $req_item_name = $_REQUEST["req_item_1_name"];
 $req_item_specification = $_REQUEST["req_item_1_code"];
 $req_item_quantity = $_REQUEST["req_item_1_quantity"];

@@ -903,7 +903,7 @@ if (empty($email)) {
     <input type="hidden" name="access_key" value="9d5568c01f83317bb1dc7ae74a3484ac">
     <input type="hidden" name="profile_id" value="FD26AD45-FADF-4239-9D62-9E99D4B4F412">
     <input type="hidden" name="transaction_uuid" value="<?php echo uniqid() ?>">
-    <input type="hidden" name="signed_field_names" value="access_key,profile_id,transaction_uuid,signed_field_names,unsigned_field_names,signed_date_time,locale,transaction_type,reference_number,amount,currency,line_item_count,item_0_unit_price,item_1_unit_price,item_2_unit_price,item_1_name,item_1_code,item_1_quantity,item_1_sku,user_name">
+    <input type="hidden" name="signed_field_names" value="access_key,profile_id,transaction_uuid,signed_field_names,unsigned_field_names,signed_date_time,locale,transaction_type,reference_number,amount,currency,line_item_count,item_0_unit_price,item_1_unit_price,item_2_unit_price,item_1_name,item_1_code,item_1_quantity,item_1_sku,req_bill_to_forename">
 <input type="hidden" name="unsigned_field_names" value>
 
     
@@ -929,9 +929,10 @@ if (empty($email)) {
 <input type="text" name="item_1_unit_price" value="100"><br>
 <input type="text" name="item_2_unit_price" value="100"><br>
  <input type="text" name="item_1_name" value="<?php echo $prodtitle; ?>"><br>
- <input type="text" name="item_1_code" value="<?php echo $protcolor; ?>"><br>
+ <input type="text" name="item_1_code" value="<?php echo $protcolor; ?>"><br>	
  <input type="text" name="item_1_quantity" value="<?php echo $quantity; ?>"><br>
  <input type="text" name="line_item_count" value="3"><br>
+<input type="text" name="req_bill_to_forename" value="<?php echo $name; ?>"><br>
 		
  <input type="text" name="amount" size="25" value="<?php echo "$amount.00"; ?>"><br/>
             <span>currency:</span><input type="text" name="currency" size="25" value="MMK"><br/>

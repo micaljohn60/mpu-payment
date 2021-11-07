@@ -23,7 +23,7 @@ $auth_amount = $_REQUEST["auth_amount"];
 $req_amount = $_REQUEST["req_amount"];
 $decision = $_REQUEST["decision"];
 
-$sql_insert_response = "INSERT INTO payment_visa_confirmation(req_bill_to_forename,	req_item_name,req_item_color,req_item_quantity,req_reference_number,transaction_id,req_card_number,card_type_name,reason_code,auth_amount,req_amount,decision) VALUE (:reqname,:reqitemname,:reqitemspecification,:reqitemquantity,:referencenub,:transaction_id,:req_card_number,:card_type_name,:reason_code,:auth_amount,:req_amount,:decision)" ;
+$sql_insert_response = "INSERT INTO payment_visa_confirmation(req_bill_to_forename,req_item_name,req_item_color,req_item_quantity,req_reference_number,transaction_id,req_card_number,card_type_name,reason_code,auth_amount,req_amount,decision) VALUE (:reqname,:reqitemname,:reqitemspecification,:reqitemquantity,:referencenub,:transaction_id,:req_card_number,:card_type_name,:reason_code,:auth_amount,:req_amount,:decision)" ;
 $insert_response_query = $connection->prepare($sql_insert_response);
 $insert_response_query->bindParam(':reqname',$req_name,PDO::PARAM_STR);
 $insert_response_query->bindParam(':reqitemname',$req_item_name,PDO::PARAM_STR);

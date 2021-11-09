@@ -24,6 +24,7 @@ $req_amount = $_REQUEST["req_amount"];
 $decision = $_REQUEST["decision"];
 
 
+if($decision == "ACCEPT" || $decision == "DECLINE"){
 $sql_insert_response = "INSERT INTO payment_visa_confirmation(req_bill_to_forename,req_item_name,req_item_color,req_item_quantity,req_reference_number,transaction_id,req_card_number,card_type_name,auth_amount,req_amount,decision) VALUE (:reqname,:reqitemname,:reqitemspecification,:reqitemquantity,:referencenub,:transaction_id,:req_card_number,:card_type_name,:auth_amount,:req_amount,:decision)" ;
 $insert_response_query = $connection->prepare($sql_insert_response);
 $insert_response_query->bindParam(':reqname',$req_name,PDO::PARAM_STR);
@@ -38,3 +39,20 @@ $insert_response_query->bindParam(':auth_amount',$auth_amount,PDO::PARAM_STR);
 $insert_response_query->bindParam(':req_amount',$req_amount,PDO::PARAM_STR);
 $insert_response_query->bindParam(':decision',$decision,PDO::PARAM_STR);
 $insert_response_query->execute();
+}elseif($decision == "CANCEL"){
+$sql_insert_response = "INSERT INTO payment_visa_confirmation(req_bill_to_forename,req_item_name,req_item_color,req_item_quantity,req_reference_number,transaction_id,req_card_number,card_type_name,auth_amount,req_amount,decision) VALUE (:reqname,:reqitemname,:reqitemspecification,:reqitemquantity,:referencenub,:transaction_id,:req_card_number,:card_type_name,:auth_amount,:req_amount,:decision)" ;
+$insert_response_query = $connection->prepare($sql_insert_response);
+$insert_response_query->bindParam(':reqname',$req_name,PDO::PARAM_STR);
+$insert_response_query->bindParam(':reqitemname',$req_item_name,PDO::PARAM_STR);
+$insert_response_query->bindParam(':reqitemspecification',$req_item_specification,PDO::PARAM_STR);
+$insert_response_query->bindParam(':reqitemquantity',$req_item_quantity,PDO::PARAM_STR);
+$insert_response_query->bindParam(':referencenub',$req_reference_number,PDO::PARAM_STR);
+$insert_response_query->bindParam(':transaction_id',"No Data",PDO::PARAM_STR);
+$insert_response_query->bindParam(':req_card_number',"No Data",PDO::PARAM_STR);
+$insert_response_query->bindParam(':card_type_name',"No Data",PDO::PARAM_STR);
+$insert_response_query->bindParam(':auth_amount',"No Data",PDO::PARAM_STR);
+$insert_response_query->bindParam(':req_amount',"No Data",PDO::PARAM_STR);
+$insert_response_query->bindParam(':decision',$decision,PDO::PARAM_STR);
+$insert_response_query->execute();
+}
+

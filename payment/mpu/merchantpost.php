@@ -15,10 +15,10 @@ $decision = $_REQUEST["decision"];
 
 
 if($decision == "ACCEPT" || $decision == "DECLINE"){
-    $req_name = $_REQUEST["req_item_1_passenger_forename"];
-$req_item_name = $_REQUEST["req_item_1_name"];
-$req_item_specification = $_REQUEST["req_item_1_code"];
-$req_item_quantity = $_REQUEST["req_item_1_quantity"];
+    $req_name = $_REQUEST["req_item_0_passenger_forename"];
+$req_item_name = $_REQUEST["req_item_0_name"];
+$req_item_specification = $_REQUEST["req_item_0_code"];
+$req_item_quantity = $_REQUEST["req_item_0_quantity"];
 $req_reference_number = $_REQUEST["req_reference_number"];
 $req_transaction_id = $_REQUEST["transaction_id"];
 $req_card_number = $_REQUEST["req_card_number"];
